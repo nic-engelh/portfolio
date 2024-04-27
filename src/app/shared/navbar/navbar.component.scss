@@ -1,4 +1,4 @@
-nav {
+.nav-bar {
     width: 100%;
     height: 92px;
     display: flex;
@@ -9,4 +9,19 @@ nav {
         height: 32px;
         width: 32px;
     }
+}
+
+.nav-menu {
+    height: 60%;
+    width: 100%;
+}
+
+.hidden {
+    display: none;
+}
+
+.nav-menu-contacts-container {
+    height: 348px;
+    width: 100%;
+    background-image: url(../../../assets/img/Rectangle\ 5.svg);
 }
