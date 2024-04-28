@@ -1,3 +1,7 @@
+nav {
+    font-family: 'Syne';
+}
+
 .nav-bar {
     width: 100%;
     height: 92px;
@@ -14,6 +18,10 @@
 .nav-menu {
     height: 60%;
     width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 .hidden {
@@ -24,4 +32,21 @@
     height: 348px;
     width: 100%;
     background-image: url(../../../assets/img/Rectangle\ 5.svg);
+    background-repeat: no-repeat;
+}
+
+.menu-link-container {
+
+    > div {
+        width: 580px;
+        height: 167px;
+
+        > a {
+            text-decoration: none;
+            color: black ;
+            font-weight: 700;
+            font-size: 96px;
+        }
+    }
+    
 }
