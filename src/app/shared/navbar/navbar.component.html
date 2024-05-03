@@ -1,8 +1,7 @@
 <nav>
   <section class="nav-bar">
     <Span>[NE]</Span>
-    <div>
-      <img src="../../../assets/img/animation/menu/menu-1.svg" alt="Navigation Icon" />
+    <div (click)="toggleAnimation()" [@imageAnimation]="animationState">
     </div>
   </section>
   <app-menu></app-menu>
