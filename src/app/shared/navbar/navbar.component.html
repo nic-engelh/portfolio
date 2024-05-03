@@ -2,6 +2,7 @@
   <section class="nav-bar">
     <Span>[NE]</Span>
     <div (click)="toggleAnimation()" [@imageAnimation]="animationState">
+      <img *ngFor="let image of menuImages; let i = index" [src]="image.path" [style.display]="image.display">
     </div>
   </section>
   <app-menu></app-menu>

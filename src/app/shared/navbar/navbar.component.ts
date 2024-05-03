@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MenuComponent } from '../menu/menu.component';
 import {
   trigger,
@@ -8,42 +8,87 @@ import {
   transition,
   keyframes,
 } from '@angular/animations';
+import { CommonModule } from '@angular/common';
+import { interval } from 'rxjs';
 
 
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [MenuComponent],
+  imports: [MenuComponent, CommonModule],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.scss',
   animations: [
     trigger('imageAnimation', [
-      state('initial', style({
-        backgroundImage: 'url("../../../assets/img/animation/menu/menu-1.svg")'
+      state('animate', style({
+        transform: 'scale(1.0)',
+        opacity: 1
       })),
-      state('middle', style({
-        backgroundImage: 'url("../../../assets/img/animation/menu/menu-2.svg")'
+      state('stop', style({
+        transform: 'scale(1)',
+        opacity: 1
       })),
-      state('final', style({
-        backgroundImage: 'url("../../../assets/img/animation/menu/menu-5.svg")'
-      })),
-      transition('* => *', animate('5s'))
-    ])
+      transition('animate => stop', [
+        animate('0.5s')
+      ]),
+      transition('stop => animate', [
+        animate('0s')
+      ]),
+    ]),
   ]
-
 })
 export class NavbarComponent {
 
-  animationState: string = 'initial';
+  menuImages = [
+    { path: '../../../assets/img/animation/menu/menu-1.svg', display: 'block' },
+    { path: '../../../assets/img/animation/menu/menu-2.svg', display: 'none' },
+    { path: '../../../assets/img/animation/menu/menu-3.svg', display: 'none' },
+    { path: '../../../assets/img/animation/menu/menu-4.svg', display: 'none' },
+    { path: '../../../assets/img/animation/menu/menu-5.svg', display: 'none' },
+    { path: '../../../assets/img/animation/menu/menu-6.svg', display: 'none' },
+    { path: '../../../assets/img/animation/menu/menu-7.svg', display: 'none' }
+  ];
+
+  animationState: 'animate' | 'stop' = 'animate';
+  currentIndex = 0;
+  clicked = false;
 
   toggleAnimation() {
-    if (this.animationState === 'initial') {
-      this.animationState = 'middle';
-    } else if (this.animationState === 'middle') {
-      this.animationState = 'final';
+    if (!this.clicked) {
+      this.clicked = true;
+      this.startAutomaticChange();
     } else {
-      this.animationState = 'initial';
+      this.currentIndex = (this.currentIndex + 1) % this.menuImages.length;
     }
+
+    if (this.currentIndex === 7) {
+      this.currentIndex = 0;
+      this.animationState = 'stop';
+      this.clicked = false;
+      return;
+    }
+
+    if (this.currentIndex === 5) {
+      this.animationState = 'stop';
+      this.clicked = false;
+      return;
+    }
+
+    if (this.animationState === 'animate') {
+      this.menuImages[this.currentIndex - 1 < 0 ? this.menuImages.length - 1 : this.currentIndex - 1].display = 'none';
+      this.menuImages[this.currentIndex].display = 'block';
+    } else {
+      this.animationState = 'animate';
+    }
+  }
+
+  startAutomaticChange() {
+    setTimeout(() => {
+      if (this.animationState === 'animate') {
+        this.toggleAnimation();
+        this.startAutomaticChange();
+      }
+    }, 100);
   }
 
 }
