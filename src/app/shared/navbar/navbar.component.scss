@@ -11,6 +11,10 @@ nav {
     > div {
         height: 32px;
         width: 32px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
     }
 }
 
