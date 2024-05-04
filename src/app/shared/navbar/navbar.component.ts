@@ -51,9 +51,9 @@ export class NavbarComponent {
       this.pictureIndex++;
       if (this.pictureIndex > this.stopAtIndex) {
         this.pictureIndex = 0;
-        this.stopAtIndex = 4;
         if (this.stopAtIndex == 6) this.currentPicture = this.menuImages[this.pictureIndex];
         clearInterval(this.animationInterval); 
+        this.stopAtIndex = 4;
       }
     }, 100);
   }
