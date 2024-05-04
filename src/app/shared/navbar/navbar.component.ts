@@ -32,7 +32,7 @@ import { interval } from 'rxjs';
         animate('0.5s')
       ]),
       transition('stop => animate', [
-        animate('0s')
+        animate('0.5s')
       ]),
     ]),
   ]
@@ -61,6 +61,12 @@ export class NavbarComponent {
       this.currentIndex = (this.currentIndex + 1) % this.menuImages.length;
     }
 
+
+    if (this.currentIndex === 5 && !this.clicked) {
+      this.clicked = true;
+      this.startAutomaticChange();
+    }
+
     if (this.currentIndex === 7) {
       this.currentIndex = 0;
       this.animationState = 'stop';
@@ -73,6 +79,7 @@ export class NavbarComponent {
       this.clicked = false;
       return;
     }
+
 
     if (this.animationState === 'animate') {
       this.menuImages[this.currentIndex - 1 < 0 ? this.menuImages.length - 1 : this.currentIndex - 1].display = 'none';
