@@ -27,6 +27,7 @@ export class NavbarComponent {
     '../../../assets/img/animation/menu/menu-5.svg',
     '../../../assets/img/animation/menu/menu-6.svg',
     '../../../assets/img/animation/menu/menu-7.svg',
+    '../../../assets/img/animation/menu/menu-8.svg',
   ];
 
   currentPicture = this.menuImages[0];
@@ -39,7 +40,7 @@ export class NavbarComponent {
     if (!this.isMenuOpen) {
       this.startAnimation();
     } else {
-      this.stopAtIndex = 6;
+      this.stopAtIndex = 7;
       this.startAnimation();
     }
     this.isMenuOpen = !this.isMenuOpen;
@@ -50,11 +51,14 @@ export class NavbarComponent {
       this.currentPicture = this.menuImages[this.pictureIndex];
       this.pictureIndex++;
       if (this.pictureIndex > this.stopAtIndex) {
-        this.pictureIndex = 0;
-        if (this.stopAtIndex == 6) this.currentPicture = this.menuImages[this.pictureIndex];
+        if (this.stopAtIndex == 7) 
+          {
+            this.pictureIndex = 0;
+            this.currentPicture = this.menuImages[this.pictureIndex];
+          }
         clearInterval(this.animationInterval); 
         this.stopAtIndex = 4;
       }
-    }, 100);
+    }, 125);
   }
 }
