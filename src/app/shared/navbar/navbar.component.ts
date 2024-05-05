@@ -17,20 +17,6 @@ import { Router } from '@angular/router';
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.scss',
   animations: [
-
-    trigger('slideInOut', [
-      state('in', style({
-        transform: 'translateY(0)',
-        opacity: 1,
-      })),
-      state('out', style({
-        transform: 'translateY(100%)',
-        opacity: 0,
-      })),
-      transition('out => in', animate('150ms ease-in')),
-      transition('in => out', animate('150ms ease-out'))
-    ])
-
   ],
 })
 export class NavbarComponent {

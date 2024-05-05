@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { OnDestroy, OnInit } from '@angular/core';
 import {
   trigger,
   state,
@@ -6,6 +7,10 @@ import {
   animate,
   transition,
 } from '@angular/animations';
+
+const hidden = {transform: 'translateY(100%)'};
+const visible = {transform: 'translateY(0)'};
+const timing = '500ms ease-in-out';
 
 @Component({
   selector: 'app-menu',
@@ -16,32 +21,28 @@ import {
   animations: [
     trigger('slideAnimation', [
       transition(':enter', [
-        style({ transform: 'translateY(100vh)', opacity: 0 }),
-        animate('500ms ease-in-out', style({ transform: 'translateY(0)', opacity: 1 }))
+        style(hidden),
+        animate(timing, style(visible))
       ]),
       transition(':leave', [
-        animate('500ms ease-in-out', style({ transform: 'translateY(-100vh)', opacity: 0 }))
+        style(visible),
+        animate(timing, style(hidden))
       ])
     ])
   ]
 })
-export class MenuComponent {
+export class MenuComponent implements OnDestroy, OnInit {
 
-
-  showMenu = false;
-  animationState = 'enter';
-
-  toggleMenu() {
-    this.showMenu = !this.showMenu;
-  }
+  animationState: 'enter' | 'leave' = 'leave';
 
   ngOnInit() {
     // Set animationState to 'enter' initially
     this.animationState = 'enter';
   }
 
-  ngOnDestroy() {
-    // Set animationState to 'leave' when the component is destroyed
+  ngOnDestroy(): void {
+    //Called once, before the instance is destroyed.
+    //Add 'implements OnDestroy' to the class.
     this.animationState = 'leave';
   }
 
