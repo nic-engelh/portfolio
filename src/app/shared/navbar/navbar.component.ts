@@ -6,9 +6,9 @@ import {
   style,
   animate,
   transition,
-  keyframes,
 } from '@angular/animations';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -16,7 +16,22 @@ import { CommonModule } from '@angular/common';
   imports: [MenuComponent, CommonModule],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.scss',
-  animations: [],
+  animations: [
+
+    trigger('slideInOut', [
+      state('in', style({
+        transform: 'translateY(0)',
+        opacity: 1,
+      })),
+      state('out', style({
+        transform: 'translateY(100%)',
+        opacity: 0,
+      })),
+      transition('out => in', animate('150ms ease-in')),
+      transition('in => out', animate('150ms ease-out'))
+    ])
+
+  ],
 })
 export class NavbarComponent {
   menuImages = [
@@ -36,11 +51,15 @@ export class NavbarComponent {
   animationInterval: any;
   stopAtIndex = 4;
 
+  constructor (private router: Router) {}
+
   toggleMenu() {
     if (!this.isMenuOpen) {
+      this.router.navigate(['nav-menu']);
       this.startAnimation();
     } else {
       this.stopAtIndex = 7;
+      this.router.navigate(['']);
       this.startAnimation();
     }
     this.isMenuOpen = !this.isMenuOpen;

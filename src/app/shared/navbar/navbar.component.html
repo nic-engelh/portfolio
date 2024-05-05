@@ -5,5 +5,8 @@
       <img [src]="currentPicture" alt="Burger Menu" />
     </div>
   </section>
-  <app-menu></app-menu>
+  <section  [@slideInOut]="isMenuOpen ? 'in' : 'out'">
+    <app-menu ></app-menu>
+  </section>
+  
 </nav>
