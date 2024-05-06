@@ -2,7 +2,7 @@
     height: 100svh;
     width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     flex-direction: column;
 }
@@ -17,7 +17,7 @@ section {
 }
 
 .nav-menu-contacts-container {
-    height: 348px;
+    height: 30%;
     width: 100%;
     background-image: url(../../../assets/img/Rectangle\ 5.svg);
     background-repeat: no-repeat;
@@ -25,9 +25,10 @@ section {
     justify-content: space-around;
     align-items: center;
     color: white;
-    > div {
+    > .span-box {
+        height: 50%;
         display: flex;
-        justify-content: center;
+        justify-content: space-evenly;
         align-items: flex-start;
         flex-direction: column;
 
@@ -75,7 +76,7 @@ section {
             font-size: 96px;
             padding: none;
             margin: none;
-        }  
+        }
     }
 }
 

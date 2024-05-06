@@ -45,8 +45,8 @@ export class NavbarComponent {
       this.startAnimation();
     } else {
       this.stopAtIndex = 7;
-      this.router.navigate(['']);
       this.startAnimation();
+      this.router.navigate(['']);
     }
     this.isMenuOpen = !this.isMenuOpen;
   }
