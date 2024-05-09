@@ -1,4 +1,4 @@
-import { Component} from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 import { MenuComponent } from './menu/menu.component';
 import { CommonModule } from '@angular/common';
 
@@ -29,6 +29,7 @@ export class NavbarComponent {
   pictureIndex = 0;
   animationInterval: any;
   stopAtIndex = 4;
+  animationStateNavbar = 'enter';
 
 
   toggleMenuButton() {
@@ -38,6 +39,7 @@ export class NavbarComponent {
     } else {
       this.stopAtIndex = 7;
       this.startAnimation();
+      this.animationStateNavbar = 'leave';
       setTimeout(()=> {
         this.isMenuOpen = !this.isMenuOpen;
       },1500)

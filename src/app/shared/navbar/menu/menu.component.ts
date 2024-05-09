@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import {
   trigger,
   state,
@@ -31,5 +31,16 @@ const timing = '500ms ease-in-out';
   ]
 })
 export class MenuComponent {
-  animationState: string = 'enter';
+ @Input() animationState: string = 'enter';
+
+ ngOnInit(): void {
+  this.logMessageEvery1Seconds();
+}
+
+logMessageEvery1Seconds(): void {
+  setInterval(() => {
+    console.log(this.animationState);
+  }, 1000);
+}
+
 }
