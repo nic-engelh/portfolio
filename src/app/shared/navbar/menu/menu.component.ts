@@ -1,5 +1,4 @@
-import { Component } from '@angular/core';
-import { OnDestroy, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import {
   trigger,
   state,
@@ -31,18 +30,7 @@ const timing = '500ms ease-in-out';
     ])
   ]
 })
-export class MenuComponent implements OnDestroy, OnInit {
-
-  animationState: 'enter' | 'leave' = 'leave';
-
-  ngOnInit() {
-    // Set animationState to 'enter' initially
-    this.animationState = 'enter';
-  }
-
-  ngOnDestroy(): void {
-    //Called once, before the instance is destroyed.
-    this.animationState = 'leave';
-  }
+export class MenuComponent {
+  @Input() animationState: string = 'void';
 
 }

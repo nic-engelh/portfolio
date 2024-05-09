@@ -1,8 +1,9 @@
 <nav>
   <section class="nav-bar">
     <Span>[NE]</Span>
-    <div (click)="toggleMenu()">
+    <div (click)="toggleMenuButton()">
       <img [src]="currentPicture" alt="Burger Menu" />
     </div>
   </section>
+  <app-menu *ngIf="isMenuOpen" [animationState]="animationState"  ></app-menu>
 </nav>

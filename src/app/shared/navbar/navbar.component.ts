@@ -1,14 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { MenuComponent } from '../menu/menu.component';
-import {
-  trigger,
-  state,
-  style,
-  animate,
-  transition,
-} from '@angular/animations';
+import { Component} from '@angular/core';
+import { MenuComponent } from './menu/menu.component';
 import { CommonModule } from '@angular/common';
-import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-navbar',
@@ -36,19 +29,20 @@ export class NavbarComponent {
   pictureIndex = 0;
   animationInterval: any;
   stopAtIndex = 4;
+  animationState: string = '';
 
-  constructor (private router: Router) {}
-
-  toggleMenu() {
+  toggleMenuButton() {
     if (!this.isMenuOpen) {
-      this.router.navigate(['nav-menu']);
       this.startAnimation();
+      this.isMenuOpen = !this.isMenuOpen;
     } else {
       this.stopAtIndex = 7;
       this.startAnimation();
-      this.router.navigate(['']);
+      this.animationState = 'leave';
+      setTimeout(()=> {
+        this.isMenuOpen = !this.isMenuOpen;
+      },1500)
     }
-    this.isMenuOpen = !this.isMenuOpen;
   }
 
   startAnimation() {
@@ -56,12 +50,12 @@ export class NavbarComponent {
       this.currentPicture = this.menuImages[this.pictureIndex];
       this.pictureIndex++;
       if (this.pictureIndex > this.stopAtIndex) {
-        if (this.stopAtIndex == 7) 
+        if (this.stopAtIndex == 7)
           {
             this.pictureIndex = 0;
             this.currentPicture = this.menuImages[this.pictureIndex];
           }
-        clearInterval(this.animationInterval); 
+        clearInterval(this.animationInterval);
         this.stopAtIndex = 4;
       }
     }, 125);
