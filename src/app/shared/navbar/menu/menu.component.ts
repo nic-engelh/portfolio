@@ -31,6 +31,5 @@ const timing = '500ms ease-in-out';
   ]
 })
 export class MenuComponent {
-  @Input() animationState: string = 'void';
-
+  animationState: string = 'enter';
 }

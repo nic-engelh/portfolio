@@ -29,7 +29,7 @@ export class NavbarComponent {
   pictureIndex = 0;
   animationInterval: any;
   stopAtIndex = 4;
-  animationState: string = '';
+
 
   toggleMenuButton() {
     if (!this.isMenuOpen) {
@@ -38,7 +38,6 @@ export class NavbarComponent {
     } else {
       this.stopAtIndex = 7;
       this.startAnimation();
-      this.animationState = 'leave';
       setTimeout(()=> {
         this.isMenuOpen = !this.isMenuOpen;
       },1500)
