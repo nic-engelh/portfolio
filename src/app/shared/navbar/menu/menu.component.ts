@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import {
   trigger,
   state,
@@ -6,6 +6,7 @@ import {
   animate,
   transition,
 } from '@angular/animations';
+import { CommonModule} from '@angular/common';
 
 const hidden = {transform: 'translateY(100%)'};
 const visible = {transform: 'translateY(0)'};
@@ -14,7 +15,7 @@ const timing = '500ms ease-in-out';
 @Component({
   selector: 'app-menu',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './menu.component.html',
   styleUrl: './menu.component.scss',
   animations: [
@@ -31,7 +32,7 @@ const timing = '500ms ease-in-out';
   ]
 })
 export class MenuComponent {
- @Input() animationState: string = 'enter';
+ @Input() animationState: string = 'void';
 
  ngOnInit(): void {
   this.logMessageEvery1Seconds();
@@ -40,7 +41,7 @@ export class MenuComponent {
 logMessageEvery1Seconds(): void {
   setInterval(() => {
     console.log(this.animationState);
-  }, 1000);
+  }, 5000);
 }
 
 }
