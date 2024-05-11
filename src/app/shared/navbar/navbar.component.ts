@@ -1,7 +1,16 @@
 import { Component } from '@angular/core';
 import { MenuComponent } from './menu/menu.component';
 import { CommonModule } from '@angular/common';
+import {
+  trigger,
+  style,
+  animate,
+  transition,
+} from '@angular/animations';
 
+const hidden = {transform: 'translateY(100%)'};
+const visible = {transform: 'translateY(0)'};
+const timing = '150ms ease-in-out';
 
 @Component({
   selector: 'app-navbar',
@@ -10,7 +19,19 @@ import { CommonModule } from '@angular/common';
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.scss',
   animations: [
-  ],
+    trigger('slideAnimation', [
+      transition(':enter', [
+        style(hidden),
+        animate(timing, style(visible))
+      ]),
+      transition(':leave', [
+        style(visible),
+        animate(timing, style(hidden))
+      ])
+    ]),
+
+
+  ]
 })
 export class NavbarComponent {
   menuImages = [
@@ -29,21 +50,25 @@ export class NavbarComponent {
   pictureIndex = 0;
   animationInterval: any;
   stopAtIndex = 4;
-  animationStateNavbar = 'void';
+  isOpen = false;
 
 
   toggleMenuButton() {
     if (!this.isMenuOpen) {
       this.startAnimation();
-      this.animationStateNavbar = 'true';
       this.isMenuOpen = !this.isMenuOpen;
+      setTimeout(()=> {
+        this.isOpen = !this.isOpen;
+      },500)
+
+      ;
     } else {
       this.stopAtIndex = 7;
       this.startAnimation();
-      this.animationStateNavbar = 'false';
+      this.isOpen = !this.isOpen;
       setTimeout(()=> {
         this.isMenuOpen = !this.isMenuOpen;
-      },1500)
+      },500)
     }
   }
 
