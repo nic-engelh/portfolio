@@ -46,6 +46,7 @@ section {
             font-family: 'Overpass';
             font-weight: 300;
             font-size: 23px;
+            cursor: none;
         }
     }
     > .link-box {
@@ -56,9 +57,11 @@ section {
 }
 
 .menu-link-container {
+
     > div {
         width: 580px;
         height: 167px;
+        margin: 16px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -68,14 +71,17 @@ section {
         &:hover .link-rectangle {
             animation: growBorder 0.5s linear forwards;
         }
+        &:active .link-rectangle {
+          animation: growToFullBorder 0.1s linear forwards;
+      }
 
         > a {
             text-decoration: none;
             color: black ;
             font-weight: 700;
             font-size: 96px;
-            padding: none;
-            margin: none;
+            padding: unset;
+            margin: unset;
         }
     }
 }
@@ -139,4 +145,21 @@ section {
         width: 244px;
         left: 336px;
     }
+}
+
+@keyframes growToFullBorder {
+  0% {
+    height: 0px;
+    width: 244px;
+    left: 336px;
+  }
+
+  100% {
+    border-left: 4px solid black;
+    border-right: 4px solid black;
+    border-top: 4px solid black;
+    height: 100%;
+    width: 100%;
+    left:0px;
+  }
 }
