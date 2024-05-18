@@ -5,5 +5,9 @@
       <img [src]="currentPicture" alt="Burger Menu" />
     </div>
   </section>
-  <app-menu *ngIf="isMenuOpen" [animationState]="animationState"  ></app-menu>
+
+  @if (isMenuOpen) {
+    <app-menu [animationState]="animationState"  ></app-menu>
+  }
+  
 </nav>
