@@ -1,7 +1,4 @@
-import { Component, OnInit, Inject } from '@angular/core';
-import { interval } from 'rxjs';
-import { takeWhile } from 'rxjs/operators';
-import { setInterval } from 'timers';
+import { Component, OnInit, OnDestroy, NgZone } from '@angular/core';
 
 @Component({
   selector: 'app-landing-page',
@@ -10,7 +7,7 @@ import { setInterval } from 'timers';
   templateUrl: './landing-page.component.html',
   styleUrl: './landing-page.component.scss',
 })
-export class LandingPageComponent implements OnInit{
+export class LandingPageComponent implements OnInit, OnDestroy {
   arrowImages = [
     'assets/img/animation/arrow/arrow_1.svg',
     'assets/img/animation/arrow/arrow_2.svg',
@@ -21,25 +18,31 @@ export class LandingPageComponent implements OnInit{
 
   currentImageIndex = 1;
 
-  componentActive = true;
-
   intervalId: any;
 
-  constructor(){ }
-
+  constructor(private ngZone: NgZone) {}
 
   ngOnInit(): void {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
     //Add 'implements OnInit' to the class.
-    this.startAnimation();
+    this.ngZone.runOutsideAngular(() => {
+      this.intervalId = setInterval(() => {
+        this.ngZone.run(() => {
+          this.currentImageIndex =
+            (this.currentImageIndex + 1) % this.arrowImages.length;
+        }, 5000);
+      });
+    });
+
   }
 
-  startAnimation () {
-    setInterval(() => {
-        this.currentImageIndex = (this.currentImageIndex + 1) % this.arrowImages.length;
-      }, 500);
+
+
+  startAnimation() {
+
   }
 
-  ngOnDestroy() {
+  ngOnDestroy(): void {
+    clearInterval(this.intervalId);
   }
 }
