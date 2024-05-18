@@ -4,14 +4,18 @@
     <h1>Developer</h1>
     <div>
       <div class="line"></div>
-      <span>Niklas Engelhardt</span>
+      <span class="title-subname" >Niklas Engelhardt</span>
     </div>
   </section>
   <section id="bottom">
     <div>
-      <p>{{ 'NiklasEngelhardt@gmail.com' }}</p>
-      <div class="arrow-scroll-down">
-        <img src="" alt="">
+      <div>
+        <p>{{ 'NiklasEngelhardt@gmail.com' }}</p>
+      </div>
+      <div>
+        <div class="arrow-scroll-down">
+          <img [src]="imagesArrow[currentImageIndex]" alt="Scroll Down Arrow">
+        </div>
         <span>Scroll <br> Down</span>
       </div>
     </div>

@@ -18,7 +18,7 @@ h1 {
   border-bottom: 4px solid black;
   width: 250px;
 }
-span {
+.title-subname {
   font-family: 'overpass';
   color: #FF9900;
   font-weight: 600;
@@ -52,6 +52,13 @@ p {
 
 section {
   width: 100%;
+}
+
+.arrow-scroll-down {
+  width: 116px;
+  height: 180px;
+  padding: 10px;
+  Gap: 10px;
 }
 
 
