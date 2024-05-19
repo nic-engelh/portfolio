@@ -3,3 +3,64 @@
   width: fit-content;
 }
 
+#about-me-main {
+  display: flex;
+  flex-direction: column;
+}
+
+h1 {
+  font-family: "Syne";
+  font-weight: 800;
+  font-size: 78px;
+  margin-bottom: 64px;
+}
+
+h1:hover {
+  color: #ff9900;
+}
+
+.portrait {
+  height: 553px;
+  width: auto;
+}
+
+.middle-section {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.text-box {
+  width: 50%;
+  font-family: "overpass";
+  font-size: 24px;
+  display: flex;
+  flex-direction: column;
+  line-height: 30px;
+}
+
+.bumber {
+  height: 80px;
+}
+
+span {
+  margin-bottom: 32px;
+}
+
+.link-button {
+  width: 164px;
+  height: 68px;
+  border: 4px solid black;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  > p {
+    margin: unset;
+  }
+}
+
+.link-button:hover {
+  width: 207px;
+  transition: 150 ease-in-out;
+}

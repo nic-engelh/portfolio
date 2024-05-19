@@ -1,48 +1,23 @@
-import { Component, OnDestroy, OnInit, NgZone } from '@angular/core';
-import { clearInterval } from 'node:timers';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-about-me',
   standalone: true,
   imports: [],
   templateUrl: './about-me.component.html',
-  styleUrl: './about-me.component.scss'
+  styleUrl: './about-me.component.scss',
 })
-export class AboutMeComponent implements OnInit, OnDestroy {
-
+export class AboutMeComponent {
   arrowImages = [
-    'src/assets/img/animation/arrow-left/arrow-left-1.svg',
-    'src/assets/img/animation/arrow-left/arrow-left-2.svg',
-    'src/assets/img/animation/arrow-left/arrow-left-3.svg'
-  ]
-  currentImageIndex: number = 0;
-  intervalId: any;
+    'assets/img/animation/arrow-left/arrow-left-1.svg',
+    'assets/img/animation/arrow-left/arrow-left-2.svg',
+    'assets/img/animation/arrow-left/arrow-left-3.svg',
+  ];
+  isHovered: boolean = false;
+  hoveredImage: string = this.arrowImages[0];
 
-  constructor (private ngZone: NgZone) { };
-
-  ngOnInit(): void {
-    this.startAnimation();
+  onHover(hovered: boolean) {
+    this.isHovered = hovered;
+    this.hoveredImage = hovered ? this.arrowImages[1] : this.arrowImages[0];
   }
-
-  ngOnDestroy(): void {
-    //Called once, before the instance is destroyed.
-    //Add 'implements OnDestroy' to the class.
-    clearInterval(this.intervalId);
-  }
-
-  startAnimation () {
-    this.ngZone.runOutsideAngular(() => {
-      this.intervalId = setInterval(() => {
-        this.ngZone.run(() => {
-          this.currentImageIndex =
-            (this.currentImageIndex + 1) % this.arrowImages.length;
-        });
-      }, 350);
-    });
-
-
-  }
-
-
-
 }

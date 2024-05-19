@@ -1,18 +1,35 @@
-<section>
-  <h1>About me</h1>
-  <span>
-    I am a Front-end developer based in Nuremberg, Germany. I enjoy helping designers and companies bring their ideas into real life. I am looking forward to continuing my developer career with a job in a junor web developer position.
-  </span>
-  <span>
-    If you think I'be a good match for your projects, contact me!
-  </span>
-  <div>
-    <span>Let's talk</span>
+<section id="about-me-main">
+  <div class="middle-section">
+    <div class="text-box">
+      <h1>About me</h1>
+      <span>
+        I am a Front-end developer based in Nuremberg, Germany. I enjoy helping
+        designers and companies bring their ideas into real life. I am looking
+        forward to continuing my developer career with a job in a junor web
+        developer position.
+      </span>
+      <span>
+        If you think I'be a good match for your projects, contact me!
+      </span>
+      <div class="link-button">
+        <p>Let's talk</p>
+      </div>
+    </div>
+    <div>
+      <div class="bumber"></div>
+      <img
+        class="portrait"
+        src="assets/img/Niklas-lowQual.jpg"
+        alt="Picture of Developer"
+      />
+    </div>
   </div>
-</section>
-<section>
-  <img src="assets/img/Niklas-lowQual.jpg" alt="Picture of Developer">
-  <div class="arrow-box">
-    <img [src]="arrowImages[currentImageIndex]" alt="Moving Arrow">
+
+  <div
+    class="arrow-box"
+    (mouseover)="onHover(true)"
+    (mouseleave)="onHover(false)"
+  >
+    <img [src]="hoveredImage" alt="Moving Arrow" />
   </div>
 </section>
