@@ -16,8 +16,7 @@ export class LandingPageComponent implements OnInit, OnDestroy {
     'assets/img/animation/arrow/arrow_5.svg',
   ];
 
-  currentImageIndex = 1;
-
+  currentImageIndex = 0;
   intervalId: any;
 
   constructor(private ngZone: NgZone) {}
@@ -25,21 +24,18 @@ export class LandingPageComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
     //Add 'implements OnInit' to the class.
+    this.startAnimation();
+  }
+
+  startAnimation() {
     this.ngZone.runOutsideAngular(() => {
       this.intervalId = setInterval(() => {
         this.ngZone.run(() => {
           this.currentImageIndex =
             (this.currentImageIndex + 1) % this.arrowImages.length;
-        }, 5000);
-      });
+        });
+      }, 350);
     });
-
-  }
-
-
-
-  startAnimation() {
-
   }
 
   ngOnDestroy(): void {

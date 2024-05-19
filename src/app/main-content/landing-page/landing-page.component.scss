@@ -39,15 +39,27 @@ p {
   text-decoration: unset;
   color: black;
   transform: rotate(-0.25turn) !important;
+  cursor: pointer;
 }
 
 #bottom {
+  font-family: 'Syne';
+  font-size: 20px;
+  padding-left: 64px;
+  padding-right: 32px;
+  font-weight: 100;
+
   > div {
     display: flex;
     justify-content: space-between;
     height: fit-content;
-    padding-right: 32px;
   }
+}
+
+.arrow-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 section {
@@ -59,6 +71,11 @@ section {
   height: 180px;
   padding: 10px;
   Gap: 10px;
+}
+
+.email-box {
+  display: flex;
+  align-items: stretch;
 }
 
 
