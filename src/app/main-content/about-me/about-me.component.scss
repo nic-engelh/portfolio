@@ -53,6 +53,7 @@ span {
   cursor: pointer;
   display: flex;
   justify-content: center;
+  transition: width 0.3s ease-in-out;
   align-items: center;
   align-content: center;
   > p {
@@ -62,5 +63,42 @@ span {
 
 .link-button:hover {
   width: 207px;
-  transition: 150 ease-in-out;
+  font-weight: bold;
+  transition: width 0.3s ease-in-out;
 }
+
+.button-box {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+}
+
+.image-container {
+  position: relative;
+  display: inline-block;
+}
+
+.image-container img {
+  display: block;
+}
+
+.hover-border {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 4px solid black;
+  pointer-events: none;
+  transform: translateX(0px) translateY(0px);
+  opacity: 0;
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+.image-container:hover .hover-border {
+  opacity: 1;
+  transform: translateX(20px) translateY(20px);
+}
+
+
