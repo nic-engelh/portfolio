@@ -67,6 +67,14 @@ span {
   transition: width 0.3s ease-in-out;
 }
 
+.link-button:active {
+  width: 207px;
+  font-weight: bold;
+  color: white;
+  background-color: black;
+  transition: all 0.3s;
+}
+
 .button-box {
   width: 100%;
   display: flex;
