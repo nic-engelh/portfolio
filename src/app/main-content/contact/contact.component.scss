@@ -10,5 +10,51 @@
   height: 100%;
   background-color: black;
   color: white;
+  display: flex;
+  justify-content: center;
+}
 
+form {
+  background-color: black;
+  color: white;
+  padding: 20px;
+  width: 617px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  background-color: #333;
+  color: white;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: white;
+}
+
+.form-control.ng-touched.ng-invalid {
+  border-color: red;
+}
+
+.form-control.ng-touched.ng-valid {
+  border-color: green;
+}
+
+.btn {
+  background-color: white;
+  color: black;
+  border: 1px solid white;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #444;
 }
