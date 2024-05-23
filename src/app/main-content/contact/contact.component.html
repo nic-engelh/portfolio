@@ -5,16 +5,16 @@
   <div class="contact-formular-container">
     <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
       <div class="form-group">
-        <input id="fullname" placeholder="Your name" formControlName="fullname" class="form-control" />
+        <input id="fullname" placeholder="Your name" formControlName="fullname" class="form-control"/>
         <div *ngIf="fullname?.invalid && fullname?.touched" class="error">
-          Fullname is required.
+          Your name is required.
         </div>
       </div>
 
       <div class="form-group">
         <input id="email" placeholder="Your email" formControlName="email" type="email" class="form-control" />
         <div *ngIf="email?.invalid && email?.touched" class="error">
-          <ng-container *ngIf="email?.errors?.['required']">Email is required.</ng-container>
+          <ng-container *ngIf="email?.errors?.['required']">Your email is required.</ng-container>
           <ng-container *ngIf="email?.errors?.['email']">Enter a valid email address.</ng-container>
         </div>
       </div>
@@ -22,15 +22,15 @@
       <div class="form-group">
         <textarea id="message" placeholder="Your Message" formControlName="message" class="form-control"></textarea>
         <div *ngIf="message?.invalid && message?.touched" class="error">
-          Message is required.
+          Your message is required.
         </div>
       </div>
 
       <div class="form-group form-check">
         <input id="acceptPrivacyPolicy" type="checkbox" formControlName="acceptPrivacyPolicy" class="form-check-input" />
-        <label for="acceptPrivacyPolicy" class="form-check-label">I accept the privacy policy</label>
+        <label for="acceptPrivacyPolicy" class="form-check-label">I've read the privacy policy and agree to the processing of my data as outlined</label>
         <div *ngIf="acceptPrivacyPolicy?.invalid && acceptPrivacyPolicy?.touched" class="error">
-          You must accept the privacy policy.
+          Please accept the privacy policy.
         </div>
       </div>
 

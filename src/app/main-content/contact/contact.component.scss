@@ -35,32 +35,46 @@ form {
   width: 100%;
   background-color: black;
   color: white !important;
-  > input {
-    width: 617px;
-  }
+  border-bottom: 1px white solid;
+  margin-bottom: 32px;
+  position: relative;
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  padding-right: 30px;
+}
+
+.form-control:hover {
+  border: 2px white solid;
 }
 
 .form-control::placeholder {
   color: white;
   font-family: 'Overpass';
+  font-size: 16px;
+  font-weight: 400px;
 }
 
 .form-control:focus {
   outline: none;
   border-color: white;
+  border: 2px white solid;
 }
 
 .form-control.ng-touched.ng-invalid {
   border-color: red;
+  background-image: url('../../../assets/img/Vector-error.svg');
 }
 
 .form-control.ng-touched.ng-valid {
   border-color: green;
+  background-image: url('../../../assets/img/Vector-done.svg');
 }
 
 textarea {
   width: 617px;
   height: 202px;
+  border: 0px;
+  padding: 15px 25px 15px 25px;
 }
 
 .btn {
@@ -93,4 +107,15 @@ textarea {
 
 form-check {
   border: unset;
+}
+
+input {
+  border-width: 0px;
+  height: 50px;
+  padding: 15px 25px 15px 25px;
+  color: white;
+  font-family: 'Overpass';
+  font-size: 16px;
+  font-weight: 400px;
+
 }
