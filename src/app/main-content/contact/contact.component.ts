@@ -17,7 +17,8 @@ export class ContactComponent {
     this.contactForm = this.fb.group({
       fullname: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
-      message: ['', Validators.required]
+      message: ['', Validators.required],
+      acceptPrivacyPolicy: [false, Validators.requiredTrue]
     });
   }
 
@@ -29,4 +30,21 @@ export class ContactComponent {
       console.log('Form submitted:', this.contactForm.value);
     }
   }
+
+  get fullname() {
+    return this.contactForm.get('fullname');
+  }
+
+  get email() {
+    return this.contactForm.get('email');
+  }
+
+  get message() {
+    return this.contactForm.get('message');
+  }
+
+  get acceptPrivacyPolicy() {
+    return this.contactForm.get('acceptPrivacyPolicy');
+  }
+
 }

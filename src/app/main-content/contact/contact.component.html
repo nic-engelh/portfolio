@@ -5,21 +5,36 @@
   <div class="contact-formular-container">
     <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
       <div class="form-group">
-        <label for="fullname">Fullname</label>
-        <input id="fullname" formControlName="fullname" class="form-control" />
+        <input id="fullname" placeholder="Your name" formControlName="fullname" class="form-control" />
+        <div *ngIf="fullname?.invalid && fullname?.touched" class="error">
+          Fullname is required.
+        </div>
       </div>
 
       <div class="form-group">
-        <label for="email">Email</label>
-        <input id="email" formControlName="email" type="email" class="form-control" />
+        <input id="email" placeholder="Your email" formControlName="email" type="email" class="form-control" />
+        <div *ngIf="email?.invalid && email?.touched" class="error">
+          <ng-container *ngIf="email?.errors?.['required']">Email is required.</ng-container>
+          <ng-container *ngIf="email?.errors?.['email']">Enter a valid email address.</ng-container>
+        </div>
       </div>
 
       <div class="form-group">
-        <label for="message">Message</label>
-        <textarea id="message" formControlName="message" class="form-control"></textarea>
+        <textarea id="message" placeholder="Your Message" formControlName="message" class="form-control"></textarea>
+        <div *ngIf="message?.invalid && message?.touched" class="error">
+          Message is required.
+        </div>
       </div>
 
-      <button type="submit" class="btn">Send</button>
+      <div class="form-group form-check">
+        <input id="acceptPrivacyPolicy" type="checkbox" formControlName="acceptPrivacyPolicy" class="form-check-input" />
+        <label for="acceptPrivacyPolicy" class="form-check-label">I accept the privacy policy</label>
+        <div *ngIf="acceptPrivacyPolicy?.invalid && acceptPrivacyPolicy?.touched" class="error">
+          You must accept the privacy policy.
+        </div>
+      </div>
+
+      <button type="submit" class="btn" [disabled]="contactForm.invalid">Send</button>
     </form>
   </div>
 </section>
