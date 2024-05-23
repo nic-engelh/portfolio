@@ -5,6 +5,7 @@
   <div class="contact-formular-container">
     <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
       <div class="form-group">
+        <label for="fullname" *ngIf="fullname?.touched">Your Name</label>
         <input id="fullname" placeholder="Your name" formControlName="fullname" class="form-control"/>
         <div *ngIf="fullname?.invalid && fullname?.touched" class="error">
           Your name is required.

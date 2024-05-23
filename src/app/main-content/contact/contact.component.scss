@@ -44,7 +44,7 @@ form {
 }
 
 .form-control:hover {
-  border: 2px white solid;
+  border: 4px white solid;
 }
 
 .form-control::placeholder {
@@ -61,12 +61,14 @@ form {
 }
 
 .form-control.ng-touched.ng-invalid {
-  border-color: red;
+  //border-color: red;
+  border: 2px white solid;
   background-image: url('../../../assets/img/Vector-error.svg');
 }
 
 .form-control.ng-touched.ng-valid {
-  border-color: green;
+  //border-color: green;
+  border: 2px white solid;
   background-image: url('../../../assets/img/Vector-done.svg');
 }
 
@@ -75,6 +77,21 @@ textarea {
   height: 202px;
   border: 0px;
   padding: 15px 25px 15px 25px;
+}
+
+.form-group {
+  position: relative;
+  > label {
+    position: relative;
+    top: 10px;
+    left: 50px;
+    background-color: black;
+    z-index: 10;
+    padding: 5px;
+    font-family: 'Overpass';
+    font-size: 16px;
+    font-weight: 400px;
+  }
 }
 
 .btn {
