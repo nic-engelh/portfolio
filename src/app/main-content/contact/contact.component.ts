@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { FormCacheServiceService } from '../../service/form-cache/form-cache-service.service';
 
 @Component({
   selector: 'app-contact',
@@ -13,7 +14,7 @@ export class ContactComponent {
 
   contactForm: FormGroup;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private formCacheService: FormCacheServiceService) {
     this.contactForm = this.fb.group({
       fullname: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
@@ -22,12 +23,23 @@ export class ContactComponent {
     });
   }
 
+  ngOnInit(): void {
+    //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
+    //Add 'implements OnInit' to the class.
+    this.loadFormData();
+    this.contactForm.valueChanges.subscribe(value => {
+      this.formCacheService.saveFormData(value)
+    })
+  }
+
   onSubmit(): void {
     if (this.contactForm.invalid) {
       this.contactForm.markAllAsTouched();
     } else {
       // Handle form submission
       console.log('Form submitted:', this.contactForm.value);
+      this.formCacheService.clearFormData();
+      this.contactForm.reset();
     }
   }
 
@@ -45,6 +57,13 @@ export class ContactComponent {
 
   get acceptPrivacyPolicy() {
     return this.contactForm.get('acceptPrivacyPolicy');
+  }
+
+  private loadFormData(): void {
+    const cachedData = this.formCacheService.getFormData();
+    if (cachedData) {
+      this.contactForm.patchValue(cachedData);
+    }
   }
 
 }
