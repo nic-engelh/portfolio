@@ -24,18 +24,22 @@
   color: white;
   display: flex;
   justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 form {
   padding: 20px;
-  width: 617px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 .form-control {
-  width: 100%;
+  width: 617px;
   background-color: black;
   color: white !important;
-  border-bottom: 1px white solid;
+  border-bottom: 2px white solid;
   margin-bottom: 32px;
   position: relative;
   background-repeat: no-repeat;
@@ -51,7 +55,7 @@ form {
   color: white;
   font-family: 'Overpass';
   font-size: 16px;
-  font-weight: 400px;
+  font-weight: 400;
 }
 
 .form-control:focus {
@@ -64,11 +68,15 @@ form {
   //border-color: red;
   border: 2px white solid;
   background-image: url('../../../assets/img/Vector-error.svg');
+
+  &::placeholder {
+    color: transparent;
+  }
 }
 
 .form-control.ng-touched.ng-valid {
   //border-color: green;
-  border: 2px white solid;
+  border: 1px white solid;
   background-image: url('../../../assets/img/Vector-done.svg');
 }
 
@@ -90,7 +98,7 @@ textarea {
     padding: 5px;
     font-family: 'Overpass';
     font-size: 16px;
-    font-weight: 400px;
+    font-weight: 400;
   }
 }
 
@@ -133,6 +141,42 @@ input {
   color: white;
   font-family: 'Overpass';
   font-size: 16px;
-  font-weight: 400px;
+  font-weight: 400;
 
+}
+
+input:focus::placeholder {
+  color: transparent;
+}
+
+.form-header {
+  font-family: 'Overpass';
+  font-size: 40px;
+  font-weight: 600;
+  color:#ff9900
+}
+
+.form-subheader {
+  font-family: 'Overpass';
+  font-size: 24px;
+  font-weight: 400;
+  color: white;
+}
+
+.form-header-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 150px;
+  justify-content: space-around;
+}
+
+.form-check-label {
+  position: unset !important;
+}
+
+.form-check {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
