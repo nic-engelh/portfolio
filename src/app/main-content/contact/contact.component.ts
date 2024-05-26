@@ -26,10 +26,6 @@ export class ContactComponent {
   ngOnInit(): void {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
     //Add 'implements OnInit' to the class.
-    this.loadFormData();
-    this.contactForm.valueChanges.subscribe(value => {
-      this.formCacheService.saveFormData(value)
-    })
   }
 
   onSubmit(): void {
@@ -38,7 +34,7 @@ export class ContactComponent {
     } else {
       // Handle form submission
       console.log('Form submitted:', this.contactForm.value);
-      this.formCacheService.clearFormData();
+      this.formCacheService.saveFormData(this.contactForm.value);
       this.contactForm.reset();
     }
   }
