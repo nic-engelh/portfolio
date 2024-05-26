@@ -201,11 +201,34 @@ input:focus::placeholder {
   align-items: center;
 }
 
-input[type="checkbox" i]:before {
-
+input[type="checkbox"] {
+  width:24px;
+  height:24px;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  cursor: pointer;
+  background-image: url('../../../assets/img/Property\ 1=Default\(1\).svg');
+  background-size: contain;
+  background-repeat: no-repeat;
 
 }
 
-input[type="checkbox" i]:checked:before {
-
+input[type="checkbox"]:checked {
+  background-image: url('../../../assets/img/Property\ 1=Checked.svg');
 }
+
+input[type="checkbox"]:hover {
+  background-image: url('../../../assets/img/Property\ 1=Default\ hover.svg');
+}
+
+input[type="checkbox"]:checked:hover {
+  background-image: url('../../../assets/img/Property\ 1=Checked\ hover.svg');
+}
+
+#error-form-check-label {
+  position: relative;
+  right: 457px;
+  top:0px
+}
+
