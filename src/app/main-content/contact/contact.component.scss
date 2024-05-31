@@ -6,16 +6,25 @@
   background-size: cover;
   display: flex;
   align-items: center;
-  > span {
-    font-family: "Syne";
-    font-weight: 800;
-    font-size: 78px;
-    letter-spacing: 1%;
-    color: white;
-  }
-  > span:hover {
-    color: #ff9900;
-  }
+  justify-content: center;
+
+  > div {
+    width: 75%;
+    display: flex;
+    justify-content: flex-start;
+
+    > span {
+      font-family: "Syne";
+      font-weight: 800;
+      font-size: 78px;
+      letter-spacing: 1%;
+      color: white;
+    }
+    > span:hover {
+      color: #ff9900;
+    }
+  };
+
 }
 
 .contact-formular-container {
