@@ -4,11 +4,12 @@ import { Router } from '@angular/router';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { AboutMeComponent } from './about-me/about-me.component';
 import { ContactComponent } from './contact/contact.component';
+import { MySkillsComponent } from './my-skills/my-skills.component';
 
 @Component({
   selector: 'app-main-content',
   standalone: true,
-  imports: [NavbarComponent, LandingPageComponent, AboutMeComponent, ContactComponent],
+  imports: [NavbarComponent, LandingPageComponent, AboutMeComponent, ContactComponent, MySkillsComponent],
   templateUrl: './main-content.component.html',
   styleUrl: './main-content.component.scss'
 })
