@@ -1,11 +1,14 @@
 <section>
-  <span>My Skills</span>
   <div class="skill-list">
-    @for (skill of skillList; track skill) {
+    <span>My skills</span>
     <div>
-      <img src="{{ skill.imagePath }}" alt="{{ skill.name }}" />
-      <span> {{ skill.name }}</span>
+      @for (skill of skillList; track skill) {
+        <div>
+          <img src="{{ skill.imagePath }}" alt="{{ skill.name }}" />
+          <span> {{ skill.name }}</span>
+        </div>
+        }
     </div>
-    }
+
   </div>
 </section>

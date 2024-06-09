@@ -9,19 +9,17 @@ import { Component } from '@angular/core';
 })
 export class MySkillsComponent {
 
-
   skillList: {name: string, imagePath: string}[] = [
-    {name: "Angular", imagePath: "src/assets/img/skills/Angular.svg"},
-    {name: "TypeScript", imagePath: "src/assets/img/skills/TypeScript.svg"},
-    {name: "JavaScript", imagePath: "src/assets/img/skills/JavaScript.svg"},
-    {name: "HTML", imagePath: "src/assets/img/skills/html.svg"},
-    {name: "CSS", imagePath: "src/assets/img/skills/css.svg"},
-    {name: "Firebase", imagePath: "src/assets/img/skills/Firebase.svg"},
-    {name: "Rest-Api", imagePath: "src/assets/img/skills/Api.svg"},
-    {name: "Git", imagePath: "src/assets/img/skills/git.svg"},
-    {name: "Scrum", imagePath: "src/assets/img/skills/scrum.svg"},
-    {name: "Materil design", imagePath: "src/assets/img/skills/TestAutomation.svg"}
+    {name: "Angular", imagePath: "/assets/img/skills/Angular.svg"},
+    {name: "TypeScript", imagePath: "/assets/img/skills/TypeScript.svg"},
+    {name: "JavaScript", imagePath: "/assets/img/skills/Javascript.svg"},
+    {name: "HTML", imagePath: "/assets/img/skills/html.svg"},
+    {name: "CSS", imagePath: "/assets/img/skills/css.svg"},
+    {name: "Firebase", imagePath: "/assets/img/skills/Firebase.svg"},
+    {name: "Rest-Api", imagePath: "/assets/img/skills/Api.svg"},
+    {name: "Git", imagePath: "/assets/img/skills/git.svg"},
+    {name: "Scrum", imagePath: "/assets/img/skills/scrum.svg"},
+    {name: "Material design", imagePath: "/assets/img/skills/TestAutomation.svg"}
   ]
-
 
 }
