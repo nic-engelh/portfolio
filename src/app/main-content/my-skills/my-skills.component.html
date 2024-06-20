@@ -3,7 +3,7 @@
     <span>My skills</span>
     <div>
       @for (skill of skillList; track skill) {
-        <div>
+        <div class="skill-box">
           <img src="{{ skill.imagePath }}" alt="{{ skill.name }}" />
           <span> {{ skill.name }}</span>
         </div>

@@ -2,15 +2,18 @@
   width: 80%;
   height: fit-content;
   border: 4px solid black;
+  position: relative;
 
   > span {
-    position: relative;
-    left: 30%;
+    position: absolute;
+    left: 50%;
     top: -16px;
     font-family: 'Syne';
     font-weight: 800;
     font-size: 78px;
     background-color: white;
+    transform: translateX(-50%);
+    min-width: 512px;
   }
   > span:hover {
     color: #FF9900;
@@ -41,4 +44,41 @@ section {
   justify-content: center;
 }
 
+.skill-box {
+  overflow:hidden;
+}
+
+.skill-box:hover {
+  animation: ease-out-animation 0.7s ease-in-out forwards;
+  animation-iteration-count: 1;
+}
+
+@keyframes ease-out-animation {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(50%) scale(0.75);
+    clip-path: inset(0 50% 0 0);
+  }
+
+  51% {
+    clip-path: inset(0 100% 0 0);
+  }
+
+  74% {
+    transform: translateX(-100%) scale(0.75);
+    clip-path: inset(0 0 0 100%);
+  }
+
+  75% {
+    transform: translateX(-50%) scale(0.75);
+    clip-path: inset(0 0 0 50%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+
+}
 
