@@ -1,15 +1,12 @@
 <section>
-
   @for (project of projects; track project) {
-
     @if (projectName == project.name) {
-
-      
-
+      <div>
+        <span>{{ project.name }}</span>
+        <span> {{ project.stack }}</span>
+        <span>{{ project.info }}</span>
+        <div class="button">Try it</div>
+      </div>
     }
-
-
   }
-
-
 </section>
