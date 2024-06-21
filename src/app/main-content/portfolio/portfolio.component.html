@@ -1,1 +1,20 @@
-<p>portfolio works!</p>
+<section>
+
+  <div class="portfolio-box">
+
+    @for (project of projects; track project; let index = $index) {
+
+      <div (mouseenter)="onHover()" (mouseleave)="onLeave()" >
+        <span>{{ index }}</span>
+
+
+        <img src="{{ project.imagePath }}" alt="">
+
+      </div>
+
+    }
+
+  </div>
+
+
+</section>
