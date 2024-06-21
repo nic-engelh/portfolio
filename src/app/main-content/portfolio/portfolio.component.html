@@ -17,12 +17,8 @@
 
     }
   </div>
-  <div
-    class="arrow-box"
-    (mouseover)="onHover(true)"
-    (mouseleave)="onHover(false)"
-  >
-    <img [src]="hoveredImage" alt="Moving Arrow" />
-  </div>
+
+  <app-arrow [arrowDirection]="'left'"></app-arrow>
+
 
 </section>

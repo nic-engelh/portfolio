@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { trigger, state, style, animate, transition } from '@angular/animations';
 import { ProjectComponent } from './project/project.component';
+import { ArrowComponent } from '../../shared/components/arrow/arrow.component';
 
 @Component({
   selector: 'app-portfolio',
   standalone: true,
-  imports: [ProjectComponent],
+  imports: [ProjectComponent, ArrowComponent],
   templateUrl: './portfolio.component.html',
   styleUrl: './portfolio.component.scss',
   animations:[
