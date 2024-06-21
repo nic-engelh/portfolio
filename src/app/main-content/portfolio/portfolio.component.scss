@@ -1,0 +1,17 @@
+section {
+
+  height: fit-content;
+
+}
+
+.project-box {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  > img {
+    filter: grayscale(100%);
+  }
+  > img:hover {
+    filter: unset;
+  }
+}
