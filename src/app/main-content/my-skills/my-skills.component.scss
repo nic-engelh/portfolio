@@ -3,6 +3,7 @@
   height: fit-content;
   border: 4px solid black;
   position: relative;
+  padding: 64px;
 
   > span {
     position: absolute;
@@ -24,16 +25,16 @@
     flex-wrap: wrap;
     align-content: center;
     align-items: center;
+    gap: 64px;
     > div {
-
       display: flex;
       flex-direction: column;
       align-items: center;
-      margin: 64px;
       > span {
         font-family: 'overpass';
         font-weight: 700;
         font-size: 16px;
+        margin-top: 8px;
       }
     }
   }
@@ -49,8 +50,11 @@ section {
 }
 
 .skill-box:hover {
-  animation: ease-out-animation 0.7s ease-in-out forwards;
-  animation-iteration-count: 1;
+  color:#FF9900;
+  >img{
+    animation: ease-out-animation 0.7s ease-in-out forwards;
+    animation-iteration-count: 1;
+  };
 }
 
 @keyframes ease-out-animation {
