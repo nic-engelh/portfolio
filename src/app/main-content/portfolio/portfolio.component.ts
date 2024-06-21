@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { trigger, state, style, animate, transition } from '@angular/animations';
+import { ProjectComponent } from './project/project.component';
 
 @Component({
   selector: 'app-portfolio',
   standalone: true,
-  imports: [],
+  imports: [ProjectComponent],
   templateUrl: './portfolio.component.html',
   styleUrl: './portfolio.component.scss',
   animations:[
@@ -25,9 +26,9 @@ export class PortfolioComponent {
   isHovered = false;
 
   projects: {name: string, imagePath: string}[] = [
-    {name: "Pokedex", imagePath: "/assets/img/"},
-    {name: "Join", imagePath: "/assets/img/"},
-    {name: "Sharky", imagePath: "/assets/img/"},
+    {name: "Pokedex", imagePath: "/assets/img/portfolio/portfolio-pokedex-hover.svg"},
+    {name: "Join", imagePath: "/assets/img/portfolio/portfolio-join-hover.svg"},
+    {name: "Sharky", imagePath: "/assets/img/portfolio/portfolio-sharky-hover.svg"},
   ]
 
   onHover() {
@@ -37,11 +38,5 @@ export class PortfolioComponent {
   onLeave() {
     this.isHovered = false;
   }
-
-  getProjectNumber () {
-    return this.projects.length;
-  }
-
-
 
 }
