@@ -5,3 +5,35 @@ section {
     flex-direction: column;
   }
 }
+
+.link-button {
+  width: 164px;
+  height: 68px;
+  border: 4px solid black;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  transition: width 0.3s ease-in-out;
+  align-items: center;
+  align-content: center;
+  > p {
+    margin: unset;
+  }
+}
+
+.link-button:hover {
+  width: 207px;
+  font-weight: bold;
+  transition: width 0.3s ease-in-out;
+}
+
+.link-button:active {
+  width: 207px;
+  font-weight: bold;
+  color: white;
+  background-color: black;
+  transition: all 0.3s;
+}
+
+
+

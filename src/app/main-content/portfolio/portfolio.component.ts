@@ -28,18 +28,18 @@ import { ArrowComponent } from '../../shared/components/arrow/arrow.component';
 export class PortfolioComponent {
   isHovered = false;
 
-  projects: {name: string, imagePath: string}[] = [
-    {name: "Pokedex", imagePath: "/assets/img/portfolio/portfolio-pokedex-hover.svg"},
-    {name: "Join", imagePath: "/assets/img/portfolio/portfolio-join-hover.svg"},
-    {name: "Sharky", imagePath: "/assets/img/portfolio/portfolio-sharky-hover.svg"},
+  projects: {name: string, imagePath: string, isHovered: boolean}[] = [
+    {name: "Pokedex", imagePath: "/assets/img/portfolio/portfolio-pokedex-hover.svg", isHovered: false},
+    {name: "Join", imagePath: "/assets/img/portfolio/portfolio-join-hover.svg", isHovered: false},
+    {name: "Sharky", imagePath: "/assets/img/portfolio/portfolio-sharky-hover.svg", isHovered: false},
   ]
 
-  onHover() {
-    this.isHovered = true;
+  onHover(hoveredProject: number) {
+   this.projects[hoveredProject].isHovered = true;
   }
 
-  onLeave() {
-    this.isHovered = false;
+  onLeave(hoveredProject: number) {
+    this.projects[hoveredProject].isHovered = false;
   }
 
 }

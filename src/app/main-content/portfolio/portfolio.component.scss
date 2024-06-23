@@ -1,17 +1,60 @@
 section {
-
   height: fit-content;
+}
+
+.arrow-box {
+  height: 600px;
+}
+
+.section-header-box {
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 32px;
 
 }
 
-.project-box {
+.portfolio-box {
   width: 100%;
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 128px;
+  margin-top: 128px;
+}
+
+.project-box {
+  width: 90%;
+  display: flex;
   flex-direction: row;
+  align-items: center;
+  gap: 64px;
   > img {
     filter: grayscale(100%);
+    z-index: 10;
   }
   > img:hover {
     filter: unset;
   }
+}
+
+.text-box {
+  width: 540px;
+  font-family: "overpass";
+  font-size: 24px;
+  display: flex;
+  flex-direction: column;
+  line-height: 30px;
+}
+
+h1 {
+  font-family: 'syne';
+  font-weight: 800;
+  font-size: 78px;
+  color: black;
+}
+
+h1:hover {
+  color: #ff9900;
 }

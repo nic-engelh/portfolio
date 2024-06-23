@@ -2,18 +2,22 @@
   <div class="arrow-box">
     <img src="" alt="">
   </div>
-  <h1>Portfolio</h1>
-  <h5>Explore a selection of my work here - Interact with projects to see my skills in action.</h5>
+  <div class="section-header-box">
+    <h1>Portfolio</h1>
+    <span class="text-box">Explore a selection of my work here - Interact with projects to see my skills in
+      action.</span>
+  </div>
 
   <div class="portfolio-box">
 
     @for (project of projects; track project; let index = $index) {
 
-      <div class="project-box" (mouseenter)="onHover()" (mouseleave)="onLeave()" >
-        <span>{{ index }} / {{ projects.length }} </span>
-        <img src="{{ project.imagePath }}" alt="Project {{ project.name }} Picture">
-        <app-project  [projectName]="project.name" [@slideAnimation]="isHovered ? 'visible' : 'hidden'"></app-project>
-      </div>
+    <div id="project-{{ index }}" class="project-box" (mouseenter)="onHover(index)" (mouseleave)="onLeave(index)">
+
+      <img src="{{ project.imagePath }}" alt="Project {{ project.name }} Picture">
+      <app-project [projectName]="project.name" [@slideAnimation]="projects[index].isHovered ? 'visible' : 'hidden'"></app-project>
+      <span>{{ index }} / {{ projects.length }} </span>
+    </div>
 
     }
   </div>

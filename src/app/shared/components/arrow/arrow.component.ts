@@ -10,7 +10,7 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
   animations: [
     trigger('changeSvg', [
       transition('* => *', [
-        animate('170ms ease-out')
+        animate('75ms ease-in-out')
       ])
     ])
   ]
