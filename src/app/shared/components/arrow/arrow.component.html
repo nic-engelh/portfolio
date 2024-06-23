@@ -1,7 +1,7 @@
 <div
     class="arrow-box"
-    (mouseover)="onHover(true)"
-    (mouseleave)="onHover(false)"
+    (mouseenter)="startAnimation()"
+    (mouseleave)="onMouseLeave()"
   >
-    <img [src]="hoveredImage" alt="Moving Arrow" />
+    <img [src]="currentSvg" alt="Moving Arrow" />
 </div>
