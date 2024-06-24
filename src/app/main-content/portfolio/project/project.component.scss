@@ -3,8 +3,30 @@ section {
   > div {
     display: flex;
     flex-direction: column;
+    max-width: 300px;
+    gap: 35px;
   }
 }
+
+.project-title {
+  font-family: 'Syne';
+  font-size: 45px;
+  font-weight: 800;
+}
+
+.project-stack {
+  font-family: 'overpass';
+  font-weight: 400;
+  font-size: 23px;
+  color: #ff9900;
+}
+
+.project-info {
+  font-family: 'overpass';
+  font-weight: 400;
+  font-size: 16px;
+}
+
 
 .link-button {
   width: 164px;

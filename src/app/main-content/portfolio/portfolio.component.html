@@ -13,8 +13,10 @@
     @for (project of projects; track project; let index = $index) {
 
     <div id="project-{{ index }}" class="project-box" (mouseenter)="onHover(index)" (mouseleave)="onLeave(index)">
-
-      <img src="{{ project.imagePath }}" alt="Project {{ project.name }} Picture">
+      <div class="img-container">
+        <img class="project-img" src="{{ project.imagePath }}" alt="Project {{ project.name }} Picture">
+      <div class="hover-border"></div>
+      </div>
       <app-project [projectName]="project.name" [@slideAnimation]="projects[index].isHovered ? 'visible' : 'hidden'"></app-project>
       <span>{{ index }} / {{ projects.length }} </span>
     </div>

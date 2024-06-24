@@ -2,9 +2,9 @@
   @for (project of projects; track project) {
     @if (projectName == project.name) {
       <div>
-        <span>{{ project.name }}</span>
-        <span> {{ project.stack }}</span>
-        <span>{{ project.info }}</span>
+        <span class="project-title">{{ project.name }}</span>
+        <span class="project-stack"> {{ project.stack }}</span>
+        <span class="project-info">{{ project.info }}</span>
         <div class="link-button">Try it</div>
       </div>
     }
