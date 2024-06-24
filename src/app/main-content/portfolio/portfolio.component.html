@@ -1,30 +1,43 @@
 <section id="portfolio">
   <div class="arrow-box">
-    <img src="" alt="">
+    <img src="" alt="" />
   </div>
   <div class="section-header-box">
     <h1>Portfolio</h1>
-    <span class="text-box">Explore a selection of my work here - Interact with projects to see my skills in
-      action.</span>
+    <span class="text-box"
+      >Explore a selection of my work here - Interact with projects to see my
+      skills in action.</span
+    >
   </div>
 
   <div class="portfolio-box">
-
     @for (project of projects; track project; let index = $index) {
 
-    <div id="project-{{ index }}" class="project-box" (mouseenter)="onHover(index)" (mouseleave)="onLeave(index)">
+    <div
+      id="project-{{ index }}"
+      class="project-box"
+      (mouseenter)="onHover(index)"
+      (mouseleave)="onLeave(index)"
+    >
       <div class="img-container">
-        <img class="project-img" src="{{ project.imagePath }}" alt="Project {{ project.name }} Picture">
-      <div class="hover-border"></div>
+        <img
+          class="project-img"
+          src="{{ project.imagePath }}"
+          alt="Project {{ project.name }} Picture"
+        />
+        <div class="hover-border">
+          <img class="project-img-border-arrow" src="/assets/img/arrow-projects.svg" alt="Moving Arrow">
+        </div>
       </div>
-      <app-project [projectName]="project.name" [@slideAnimation]="getAnimationState(index)"></app-project>
-      <span>{{ index }} / {{ projects.length }} </span>
+      <app-project
+        [projectName]="project.name"
+        [@slideAnimation]="getAnimationState(index)"
+      ></app-project>
+      <span class="project-number">0{{ index + 1 }} / 0{{ projects.length }} </span>
     </div>
 
     }
   </div>
 
   <app-arrow [arrowDirection]="'left'"></app-arrow>
-
-
 </section>

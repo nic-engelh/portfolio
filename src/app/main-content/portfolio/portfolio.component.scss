@@ -86,10 +86,31 @@ h1:hover {
  filter: unset;
 }
 
+.project-box:hover .project-img-border-arrow {
+  transform: rotate(-120deg);
+ }
+
+.project-img-border-arrow{
+  position: relative;
+  left: 94.75%;
+  top: 45%;
+  transition: transform 0.5s ease;
+}
+
+.project-number {
+  font-family: 'syne';
+  font-weight: 700;
+  font-size: 48px;
+}
+
 
 @media screen and (max-width: 700px) {
   .project-box {
     flex-direction: column;
+  }
+  .project-img {
+    width: 316px;
+    height: 200px;
   }
 }
 

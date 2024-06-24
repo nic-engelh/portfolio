@@ -82,6 +82,5 @@ export class PortfolioComponent {
     const isVisible = this.projects[projectIndex].isHovered === true;
     const screenSize = this.isSmallScreen ? 'small' : 'large';
     return isVisible ? `visible-${screenSize}` : `hidden-${screenSize}`;
-
   }
 }
