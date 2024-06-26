@@ -29,13 +29,17 @@
           <img class="project-img-border-arrow" src="/assets/img/arrow-projects.svg" alt="Moving Arrow">
         </div>
       </div>
-      <app-project
-        [projectName]="project.name"
-        [@slideAnimation]="getAnimationState(index)"
-      ></app-project>
-      <div class="project-number-box">
-        <span class="project-number">0{{ index + 1 }}/0{{ projects.length }} </span>
+      <div class="project-description-container">
+        <div class="project-number-box">
+          <span class="project-number">0{{ index + 1 }}/0{{ projects.length }} </span>
+        </div>
+        <app-project
+          [projectName]="project.name"
+          [@slideAnimation]="getAnimationState(index)"
+        ></app-project>
       </div>
+
+
     </div>
 
     }

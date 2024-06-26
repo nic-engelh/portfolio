@@ -28,6 +28,7 @@ section {
     @for $i from 1 through length($directions) {
       &:nth-child(#{$i}) {
         display: flex;
+        justify-content: space-between;
         flex-direction: nth($directions, $i);
 
         @if nth($directions, $i) == "row-reverse" {
@@ -43,6 +44,10 @@ section {
 
           &:hover .project-img-border-arrow {
             transform: rotate(120deg);
+          }
+
+          .project-description-container {
+            align-items: flex-start;
           }
         }
       }
@@ -63,15 +68,25 @@ section {
     z-index: 10;
   }
 
-  > .project-number-box {
+  > .project-description-container {
+    height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    height: 100% !important;
-    max-height: 460px;
-    flex: 0 1 auto;
-    //height: 460px;
+    justify-content: space-evenly;
+    align-items: flex-end;
+
+    > .project-number-box {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      max-height: 460px;
+      flex: 0 1 auto;
+      //height: 460px;
+    }
+
   }
+
+
 }
 
 .project-img {

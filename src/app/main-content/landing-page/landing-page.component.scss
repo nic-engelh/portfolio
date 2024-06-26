@@ -1,3 +1,7 @@
+
+@import '../../../styles/_breakpoints.scss';
+
+
 header {
   display: flex;
   justify-content: center;
@@ -12,11 +16,29 @@ h1 {
   font-weight: 900;
   text-align: center;
   margin-bottom: 80px;
+
+  @include md {
+    font-size: 88px;
+    margin-bottom: 60px;
+  }
+ @include sm {
+    font-size: 48px;
+    margin-bottom: 32px;
+ }
+ @include xs {
+  font-size: 48px;
+  margin-bottom: 32px;
+ }
 }
 
 .line {
   border-bottom: 4px solid black;
   width: 650px;
+  @include md {
+    width: 460px;
+  }
+
+
 }
 .title-subname {
   font-family: 'overpass';
@@ -79,6 +101,32 @@ section {
 
 
 
+
+
+
+.my-component {
+  font-size: 16px;
+
+  @include xs {
+    font-size: 14px;
+  }
+
+  @include sm {
+    font-size: 15px;
+  }
+
+  @include md {
+    font-size: 16px;
+  }
+
+  @include lg {
+    font-size: 18px;
+  }
+
+  @include xl {
+    font-size: 20px;
+  }
+}
 
 
 
