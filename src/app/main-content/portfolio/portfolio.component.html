@@ -33,7 +33,9 @@
         [projectName]="project.name"
         [@slideAnimation]="getAnimationState(index)"
       ></app-project>
-      <span class="project-number">0{{ index + 1 }} / 0{{ projects.length }} </span>
+      <div class="project-number-box">
+        <span class="project-number">0{{ index + 1 }}/0{{ projects.length }} </span>
+      </div>
     </div>
 
     }
