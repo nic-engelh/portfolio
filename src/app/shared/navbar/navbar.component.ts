@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener, Renderer2, ElementRef } from '@angular/core';
 import { MenuComponent } from './menu/menu.component';
 import { CommonModule } from '@angular/common';
 import {
@@ -29,11 +29,12 @@ const timing = '150ms ease-in-out';
         animate(timing, style(hidden))
       ])
     ]),
-
-
   ]
 })
 export class NavbarComponent {
+  private navbarElement: HTMLElement;
+  private initialTop: number;
+
   menuImages = [
     '../../../assets/img/animation/menu/menu-1.svg',
     '../../../assets/img/animation/menu/menu-2.svg',
@@ -51,6 +52,27 @@ export class NavbarComponent {
   animationInterval: any;
   stopAtIndex = 4;
   isOpen = false;
+
+  constructor(private renderer: Renderer2, private elRef: ElementRef) {
+    this.navbarElement = this.elRef.nativeElement;
+    this.initialTop = this.navbarElement.offsetTop;
+  }
+
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+    this.handleNavbarPosition();
+  }
+
+  handleNavbarPosition() {
+    if (window.scrollY >= this.initialTop) {
+      this.renderer.setStyle(this.navbarElement, 'position', 'fixed');
+      this.renderer.setStyle(this.navbarElement, 'top', '0');
+    } else {
+      this.renderer.setStyle(this.navbarElement, 'position', 'static');
+      this.renderer.setStyle(this.navbarElement, 'top', 'auto');
+    }
+  }
+
 
 
   toggleMenuButton() {
