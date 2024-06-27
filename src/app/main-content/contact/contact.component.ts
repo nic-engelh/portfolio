@@ -1,18 +1,32 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
+import { Component, OnInit, inject } from '@angular/core';
+import { FormBuilder, FormGroup, Validators, ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { FormCacheServiceService } from '../../service/form-cache/form-cache-service.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [ReactiveFormsModule, CommonModule],
+  imports: [ReactiveFormsModule, FormsModule, CommonModule],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss'
 })
 export class ContactComponent {
 
+  http= inject(HttpClient);
+
   contactForm: FormGroup;
+
+  post = {
+    endPoint: 'https://deineDomain.de/sendMail.php',
+    body: (payload: any) => JSON.stringify(payload),
+    options: {
+      headers: {
+        'Content-Type': 'text/plain',
+        responseType: 'text',
+      },
+    },
+  };
 
   constructor(private fb: FormBuilder, private formCacheService: FormCacheServiceService) {
     this.contactForm = this.fb.group({
@@ -33,11 +47,23 @@ export class ContactComponent {
       this.contactForm.markAllAsTouched();
     } else {
       // Handle form submission
+      this.http.post(this.post.endPoint, this.post.body(this.contactForm.value))
+      .subscribe({
+        next: (response) => {
+          this.contactForm.reset();
+        },
+        error: (error) => {
+          console.error(error);
+        },
+        complete: () => console.info('send post complete')
+      });
       console.log('Form submitted:', this.contactForm.value);
       this.formCacheService.saveFormData(this.contactForm.value);
       this.contactForm.reset();
     }
   }
+
+
 
   get fullname() {
     return this.contactForm.get('fullname');
