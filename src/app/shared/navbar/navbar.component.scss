@@ -1,14 +1,16 @@
 nav {
     font-family: 'Syne';
+    background-color: white;
+    z-index: 20;
 }
 
 .nav-bar {
     height: 92px;
-    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 30px 100px 30px 100px;
+
     > div {
         height: 32px;
         width: 32px;

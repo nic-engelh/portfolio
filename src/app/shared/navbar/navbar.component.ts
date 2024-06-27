@@ -8,6 +8,7 @@ import {
   transition,
 } from '@angular/animations';
 
+
 const hidden = {transform: 'translateY(100%)'};
 const visible = {transform: 'translateY(0)'};
 const timing = '150ms ease-in-out';
@@ -58,6 +59,8 @@ export class NavbarComponent {
     this.initialTop = this.navbarElement.offsetTop;
   }
 
+
+
   @HostListener('window:scroll', [])
   onWindowScroll() {
     this.handleNavbarPosition();
@@ -67,9 +70,11 @@ export class NavbarComponent {
     if (window.scrollY >= this.initialTop) {
       this.renderer.setStyle(this.navbarElement, 'position', 'fixed');
       this.renderer.setStyle(this.navbarElement, 'top', '0');
+      this.renderer.setStyle(this.navbarElement, 'width', '100%');
     } else {
       this.renderer.setStyle(this.navbarElement, 'position', 'static');
       this.renderer.setStyle(this.navbarElement, 'top', 'auto');
+      this.renderer.removeStyle(this.navbarElement, 'width');
     }
   }
 
