@@ -1,5 +1,7 @@
-import { Component, HostListener, Renderer2, ElementRef } from '@angular/core';
+import { Component} from '@angular/core';
 import { MenuComponent } from './menu/menu.component';
+import { Overlay, OverlayModule} from '@angular/cdk/overlay';
+import { PortalModule } from '@angular/cdk/portal'
 import { CommonModule } from '@angular/common';
 import {
   trigger,
@@ -16,7 +18,7 @@ const timing = '150ms ease-in-out';
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [MenuComponent, CommonModule],
+  imports: [MenuComponent, CommonModule, OverlayModule, PortalModule],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.scss',
   animations: [
@@ -33,8 +35,7 @@ const timing = '150ms ease-in-out';
   ]
 })
 export class NavbarComponent {
-  private navbarElement: HTMLElement;
-  private initialTop: number;
+  protected menuOpen = false;
 
   menuImages = [
     '../../../assets/img/animation/menu/menu-1.svg',
@@ -54,28 +55,8 @@ export class NavbarComponent {
   stopAtIndex = 4;
   isOpen = false;
 
-  constructor(private renderer: Renderer2, private elRef: ElementRef) {
-    this.navbarElement = this.elRef.nativeElement;
-    this.initialTop = this.navbarElement.offsetTop;
-  }
 
-
-
-  @HostListener('window:scroll', [])
-  onWindowScroll() {
-    this.handleNavbarPosition();
-  }
-
-  handleNavbarPosition() {
-    if (window.scrollY >= this.initialTop) {
-      this.renderer.setStyle(this.navbarElement, 'position', 'fixed');
-      this.renderer.setStyle(this.navbarElement, 'top', '0');
-      this.renderer.setStyle(this.navbarElement, 'width', '100%');
-    } else {
-      this.renderer.setStyle(this.navbarElement, 'position', 'static');
-      this.renderer.setStyle(this.navbarElement, 'top', 'auto');
-      this.renderer.removeStyle(this.navbarElement, 'width');
-    }
+  constructor(private overlay: Overlay) {
   }
 
 

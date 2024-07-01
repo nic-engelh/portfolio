@@ -1,13 +1,26 @@
 <nav>
-  <section class="nav-bar">
+  <section class="nav-bar" cdkOverlayOrigin #trigger="cdkOverlayOrigin">
     <Span>[NE]</Span>
-    <div (click)="toggleMenuButton()">
+    <div
+      (click)="menuOpen = !menuOpen"
+    >
       <img [src]="currentPicture" alt="Burger Menu" />
     </div>
   </section>
-  @if (isMenuOpen) {
-    <div @slideAnimation >
-      <app-menu ></app-menu>
+  <ng-template
+    cdkConnectedOverlay
+    [cdkConnectedOverlayOrigin]="trigger"
+    [cdkConnectedOverlayOpen]="menuOpen"
+    cdkConnectedOverlayWidth="100svw"
+  >
+    <div @slideAnimation>
+      <app-menu></app-menu>
     </div>
+  </ng-template>
+
+  @if (isMenuOpen) {
+  <div @slideAnimation>
+    <app-menu></app-menu>
+  </div>
   }
 </nav>

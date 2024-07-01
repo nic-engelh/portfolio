@@ -1,22 +1,18 @@
 .nav-menu {
-    height: 100svh;
-    width: 100%;
+    height: 969px;
+    width: 100svw;
     display: flex;
     justify-content: flex-start;
     align-items: center;
     flex-direction: column;
     background-color: white;
-    z-index: 998;
+    font-family: 'Syne';
 }
 
 .hidden {
     display: none;
 }
 
-section {
-    display: block;
-    font-family: 'Syne';
-}
 
 .nav-menu-contacts-container {
     height: 30%;
