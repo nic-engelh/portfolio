@@ -1,8 +1,8 @@
 .nav-menu {
-    height: 969px;
+    height: 869px;
     width: 100svw;
     display: flex;
-    justify-content: flex-start;
+    justify-content: flex-end;
     align-items: center;
     flex-direction: column;
     background-color: white;
@@ -17,6 +17,7 @@
 .nav-menu-contacts-container {
     height: 30%;
     width: 100%;
+    padding-top: 10%;
     background-image: url(../../../../assets/img/Rectangle\ 5.svg);
     background-repeat: no-repeat;
     background-size: cover;
@@ -25,7 +26,7 @@
     align-items: center;
     color: white;
     > .span-box {
-        height: 50%;
+        height: 90%;
         display: flex;
         justify-content: space-evenly;
         align-items: flex-start;

@@ -3,6 +3,7 @@
     <Span>[NE]</Span>
     <div
       (click)="menuOpen = !menuOpen"
+      (click)="toggleMenuButton()"
     >
       <img [src]="currentPicture" alt="Burger Menu" />
     </div>
@@ -17,10 +18,4 @@
       <app-menu></app-menu>
     </div>
   </ng-template>
-
-  @if (isMenuOpen) {
-  <div @slideAnimation>
-    <app-menu></app-menu>
-  </div>
-  }
 </nav>

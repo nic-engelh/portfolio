@@ -53,46 +53,31 @@ export class NavbarComponent {
   pictureIndex = 0;
   animationInterval: any;
   stopAtIndex = 4;
-  isOpen = false;
 
 
   constructor(private overlay: Overlay) {
   }
 
-
-
   toggleMenuButton() {
     if (!this.isMenuOpen) {
       this.startAnimation();
-      this.isMenuOpen = !this.isMenuOpen;
-      setTimeout(()=> {
-        this.isOpen = !this.isOpen;
-      },500)
-
-      ;
     } else {
       this.stopAtIndex = 7;
       this.startAnimation();
-      this.isOpen = !this.isOpen;
-      setTimeout(()=> {
-        this.isMenuOpen = !this.isMenuOpen;
-      },500)
     }
+    this.isMenuOpen = !this.isMenuOpen;
   }
+
 
   startAnimation() {
     this.animationInterval = setInterval(() => {
       this.currentPicture = this.menuImages[this.pictureIndex];
-      this.pictureIndex++;
-      if (this.pictureIndex > this.stopAtIndex) {
-        if (this.stopAtIndex == 7)
-          {
-            this.pictureIndex = 0;
-            this.currentPicture = this.menuImages[this.pictureIndex];
-          }
+      if (++this.pictureIndex > this.stopAtIndex) {
         clearInterval(this.animationInterval);
+        [this.pictureIndex, this.currentPicture] = this.stopAtIndex === 7 ? [0, this.menuImages[0]] : [this.pictureIndex, this.currentPicture];
         this.stopAtIndex = 4;
       }
     }, 125);
   }
+
 }
