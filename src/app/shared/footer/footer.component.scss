@@ -1,59 +1,90 @@
 footer {
-    max-width: 1240px;
-    height: 69px;
-    width: 100%;
-    background-color: black;
-    color: white;
-    display: flex;
-    justify-content: space-around;
-    padding-top: 48px;
-    padding-bottom: 48px;
+  height: 69px;
+  width: 100%;
+  background-color: black;
+  color: white;
+  display: flex;
+  justify-content: space-around;
+  padding-top: 48px;
+  padding-bottom: 48px;
 
-    > div {
-        display: flex;
-        flex-direction: column;
-        gap: 32px;
-    }
+  > div {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
 }
 
 .copyright {
-    font-weight: 400;
-    font-size: 23px;
-    font-family: 'overpass';
+  font-weight: 400;
+  font-size: 23px;
+  font-family: "overpass";
 }
 
 .legal-notice {
-    font-family: 'overpass';
-    font-weight: 400;
-    font-size: 16px;
-    text-decoration: unset;
-    color: white;
+  font-family: "overpass";
+  font-weight: 400;
+  font-size: 16px;
+  text-decoration: unset;
+  color: white;
+  text-align: right;
+}
+
+.legal-notice-border {
+  position: relative;
+
+  transition: transform 0.3s ease;
 }
 
 .logo {
-    font-size: 42px;
-    font-weight: 800;
+  font-size: 42px;
+  font-weight: 800;
 }
 
 .link-box {
-    display: flex;
-    flex-direction: row;
-    gap: 42px;
+  display: flex;
+  flex-direction: row;
+  gap: 42px;
+}
+
+.legal-notice:hover .legal-notice-border {
+  border-bottom: 4px solid #ff9900;
+  animation: moveBottomBorder 0.3s forwards;
 }
 
 .move-button:hover {
-    animation: moveUp 0.3s forwards;
+  animation: moveUp 0.3s forwards;
 }
 
 .move-button {
-    transition: transform 0.3s ease;
+  transition: transform 0.3s ease;
 }
 
 @keyframes moveUp {
-    0% {
-      transform: translateY(0);
-    }
-    100% {
-      transform: translateY(-10px); /* Bewegung um 100px nach oben */
-    }
+  0% {
+    transform: translateY(0);
   }
+  100% {
+    transform: translateY(-10px); /* Bewegung um 100px nach oben */
+  }
+}
+
+@keyframes moveBottomBorder {
+  0% {
+    width: 0%;
+    opacity: 0;
+    left:100px;
+  }
+
+  50% {
+    opacity: 1;
+    width: 45%;
+    left: 113px;
+  }
+
+  100% {
+    opacity: 1;
+    width: 45%;
+    left:113px;
+  }
+}
