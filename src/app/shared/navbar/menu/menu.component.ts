@@ -1,6 +1,6 @@
 import { Component, } from '@angular/core';
 import { CommonModule} from '@angular/common';
-import { ViewportScroller } from '@angular/common';
+import { NgxPageScrollDirective  } from 'ngx-page-scroll';
 
 
 const hidden = {transform: 'translateY(100%)'};
@@ -19,9 +19,6 @@ const timing = '150ms ease-in-out';
 })
 export class MenuComponent {
 
-  constructor(private viewportScroller: ViewportScroller) {}
+  constructor() {}
 
-  scrollToSection(sectionId: string) {
-    this.viewportScroller.scrollToAnchor(sectionId);
-  }
 }
