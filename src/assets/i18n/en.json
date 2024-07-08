@@ -1,5 +1,34 @@
 
 {
-  "TITLE": "Welcome",
-  "DESCRIPTION": "This is a sample description."
+  "MENU-ABOUT":"About me",
+  "MENU-SKILLS":"My skills",
+  "MENU-PORTFOLIO":"Portfolio",
+  "MENU-HI":"Say Hi!",
+  "SCROLL": "Scroll Down",
+  "ABOUT-TITLE":"About me",
+  "ABOUT-DESCRIPTION":"I am a Front-end developer based in Nuremburg, Germany. I enjoy helping designers and companies bring their ideas into real life.  I am looking forward to continuing my developer career with a job in a junior web developer position. If you think I’d be a good match for your projects, contact me!",
+  "ABOUT-BUTTON": "Let's talk",
+  "SKILLS-TITLE": "My skills",
+  "PORTFOLIO-TITLE": "Portfolio",
+  "PORTFOLIO-DESCRIPTION": "Feel free to try out my latest development projects and look into their code.",
+  "PORTFOLIO-POKEDEX": "Based on the PokéAPI a simple library that provides and catalogues pokemon information.",
+  "PORTFOLIO-JOIN": "Taskmanager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.",
+  "PORTFOLIO-SHARKY":"A simple Jump-and-Run game based on a object-oriented approach. Help sharkie to find coins and poison bottles to fight against the killer whale.",
+  "SAY":"Say Hi!",
+  "CONTACT-HEADER":"Want to discuss a new project?",
+  "CONTACT-DISCUSS":"Say hello! let's discuss your ideas and make it happen",
+  "CONTACT-NAME":"Your name",
+  "CONTACT-NAME-ERROR":"Your name is required",
+  "CONTACT-EMAIL":"Your email",
+  "CONTACT-EMAIL-ERROR":"Your email is required",
+  "CONTACT-MESSAGE":"Your message",
+  "CONTACT-MESSAGE-ERROR":"Your message is empty",
+  "CONTACT-ACCEPTANCE":"I've read the",
+  "CONTACT-ACCEPTANCE-2":"and agree to the processing of my data as outlined.",
+  "CONTACT-ACCEPTANCE-ERROR":"Please accept the privacy policy",
+  "CONTACT-PRIVACY":"privacy policy",
+  "CONTACT-SEND":"Send message",
+  "FOOTER-LEGAL":"Legal notice"
 }
+
+
