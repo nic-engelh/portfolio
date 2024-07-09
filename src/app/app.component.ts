@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { FooterComponent } from './shared/footer/footer.component';
-import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-root',
@@ -15,10 +14,7 @@ import { TranslateService } from '@ngx-translate/core';
 export class AppComponent{
   title = 'portfolio';
 
-  constructor(private translate: TranslateService) {
-    translate.setDefaultLang('en');
-    translate.use('de');
-  }
+
 }
 
 

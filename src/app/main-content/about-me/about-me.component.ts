@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { ArrowComponent } from '../../shared/components/arrow/arrow.component';
+import { TranslateService,TranslateModule} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-about-me',
   standalone: true,
-  imports: [ArrowComponent],
+  imports: [ArrowComponent, TranslateModule],
   templateUrl: './about-me.component.html',
   styleUrl: './about-me.component.scss',
 })
@@ -16,6 +17,10 @@ export class AboutMeComponent {
   ];
   isHovered: boolean = false;
   hoveredImage: string = this.arrowImages[0];
+
+  constructor(public translate: TranslateService) {
+    this.translate.setDefaultLang('en');
+  }
 
   onHover(hovered: boolean) {
     this.isHovered = hovered;
