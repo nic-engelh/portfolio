@@ -9,6 +9,7 @@ import {
   animate,
   transition,
 } from '@angular/animations';
+import { TranslateService } from '@ngx-translate/core';
 
 
 const hidden = {transform: 'translateY(100%)'};
@@ -55,7 +56,11 @@ export class NavbarComponent {
   stopAtIndex = 4;
 
 
-  constructor(private overlay: Overlay) {
+  constructor(private overlay: Overlay, private translate: TranslateService) {
+  }
+
+  switchLanguage(language: string): void {
+    this.translate.use(language);
   }
 
   toggleMenuButton() {
