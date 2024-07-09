@@ -1,4 +1,4 @@
-import { Component, input, } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 import { CommonModule} from '@angular/common';
 import { NgxPageScrollDirective  } from 'ngx-page-scroll';
 import { TranslateService,TranslateModule} from '@ngx-translate/core';
@@ -21,9 +21,14 @@ const timing = '150ms ease-in-out';
 })
 export class MenuComponent {
 
+  onMenuChange = output<boolean>();
 
   constructor (public translate: TranslateService) {
     this.translate.setDefaultLang('en');
+  }
+
+  updateMenu(menuOpen: boolean) {
+    this.onMenuChange.emit(menuOpen);
   }
 
 }

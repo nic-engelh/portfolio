@@ -63,6 +63,11 @@ export class NavbarComponent {
     this.translate.use(language);
   }
 
+  toggleMenu(){
+    this.menuOpen = !this.menuOpen;
+    this.toggleMenuButton();
+  }
+
   toggleMenuButton() {
     if (!this.isMenuOpen) {
       this.startAnimation();

@@ -24,7 +24,7 @@
     cdkConnectedOverlayWidth="100svw"
   >
     <div @slideAnimation>
-      <app-menu></app-menu>
+      <app-menu (onMenuChange)="toggleMenu()"></app-menu>
     </div>
   </ng-template>
 </nav>

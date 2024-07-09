@@ -17,7 +17,7 @@
         }}</label>
         <input
           id="fullname"
-          placeholder="Your name"
+          placeholder="{{ 'CONTACT-NAME' | translate }}"
           formControlName="fullname"
           class="form-control"
         />
@@ -32,7 +32,7 @@
         }}</label>
         <input
           id="email"
-          placeholder="Your email"
+          placeholder="{{ 'CONTACT-EMAIL' | translate }}"
           formControlName="email"
           type="email"
           class="form-control"
@@ -53,7 +53,7 @@
         }}</label>
         <textarea
           id="message"
-          placeholder="Your message"
+          placeholder="{{ 'CONTACT-MESSAGE' | translate }}"
           formControlName="message"
           class="form-control"
         ></textarea>
