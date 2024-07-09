@@ -1,9 +1,10 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { TranslateService,TranslateModule} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-project',
   standalone: true,
-  imports: [],
+  imports: [TranslateModule],
   templateUrl: './project.component.html',
   styleUrl: './project.component.scss'
 })
@@ -16,5 +17,8 @@ export class ProjectComponent {
     {name: "Sharky", stack: "HTML | CSS | JavaScript", info:"A simple Jump-and-Run game based on a object-oriented approach. Help sharkie to find coins and poison bottles to fight against the killer whale."},
   ]
 
+  constructor (public translate: TranslateService) {
+    this.translate.setDefaultLang('en');
+  }
 
 }

@@ -3,11 +3,12 @@ import { FormBuilder, FormGroup, Validators, ReactiveFormsModule, FormsModule } 
 import { CommonModule } from '@angular/common';
 import { FormCacheServiceService } from '../../service/form-cache/form-cache-service.service';
 import { HttpClient } from '@angular/common/http';
+import { TranslateService,TranslateModule} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [ReactiveFormsModule, FormsModule, CommonModule],
+  imports: [ReactiveFormsModule, FormsModule, CommonModule, TranslateModule],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss'
 })
@@ -28,13 +29,14 @@ export class ContactComponent {
     },
   };
 
-  constructor(private fb: FormBuilder, private formCacheService: FormCacheServiceService) {
+  constructor(public translate: TranslateService, private fb: FormBuilder, private formCacheService: FormCacheServiceService) {
     this.contactForm = this.fb.group({
       fullname: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       message: ['', Validators.required],
       acceptPrivacyPolicy: [false, Validators.requiredTrue]
     });
+    this.translate.setDefaultLang('en');
   }
 
   ngOnInit(): void {

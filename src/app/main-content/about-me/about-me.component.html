@@ -1,16 +1,19 @@
 <section id="section-about-me">
   <div class="middle-section">
     <div class="text-box">
-      <h1>About me</h1>
+      <h1>{{ 'ABOUT-TITLE' | translate }}</h1>
       <span>
-        {{ 'ABOUT-DESCRIPTION' | translate }}
+        {{ 'ABOUT-DESCRIPTION-TOP' | translate }}
+        <br>
+        <br>
+        {{ 'ABOUT-DESCRIPTION-BOTTOM' | translate }}
       </span>
       <span>
         {{ 'ABOUT-CONTACT' | translate }}
       </span>
       <div class="button-box">
         <div class="link-button">
-          <p>Let's talk</p>
+          <p>{{ 'ABOUT-BUTTON' | translate }}</p>
         </div>
       </div>
     </div>

@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
+import { TranslateService,TranslateModule} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-my-skills',
   standalone: true,
-  imports: [],
+  imports: [TranslateModule],
   templateUrl: './my-skills.component.html',
   styleUrl: './my-skills.component.scss'
 })
@@ -21,5 +22,9 @@ export class MySkillsComponent {
     {name: "Scrum", imagePath: "/assets/img/skills/scrum.svg"},
     {name: "Material design", imagePath: "/assets/img/skills/TestAutomation.svg"}
   ]
+
+  constructor(public translate: TranslateService) {
+    this.translate.setDefaultLang('en');
+  }
 
 }

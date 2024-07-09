@@ -5,11 +5,12 @@ import { ArrowComponent } from '../../shared/components/arrow/arrow.component';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
+import { TranslateService,TranslateModule} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-portfolio',
   standalone: true,
-  imports: [ProjectComponent, ArrowComponent],
+  imports: [ProjectComponent, ArrowComponent, TranslateModule],
   templateUrl: './portfolio.component.html',
   styleUrl: './portfolio.component.scss',
   animations:[
@@ -50,7 +51,9 @@ export class PortfolioComponent {
     {name: "Sharky", imagePath: "/assets/img/portfolio/portfolio-sharky-hover.svg", isHovered: false},
   ]
 
-  constructor (private breakpointObserver: BreakpointObserver) {}
+  constructor (private breakpointObserver: BreakpointObserver, public translate: TranslateService) {
+    this.translate.setDefaultLang('en');
+  }
 
   ngOnInit(): void {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.

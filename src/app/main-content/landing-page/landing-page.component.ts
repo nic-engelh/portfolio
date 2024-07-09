@@ -1,9 +1,10 @@
 import { Component, OnInit, OnDestroy, NgZone } from '@angular/core';
+import { TranslateService,TranslateModule} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-landing-page',
   standalone: true,
-  imports: [],
+  imports: [TranslateModule],
   templateUrl: './landing-page.component.html',
   styleUrl: './landing-page.component.scss',
 })
@@ -19,7 +20,9 @@ export class LandingPageComponent implements OnInit, OnDestroy {
   currentImageIndex = 0;
   intervalId: any;
 
-  constructor(private ngZone: NgZone) {}
+  constructor(private ngZone: NgZone, public translate: TranslateService) {
+    this.translate.setDefaultLang('en');
+  }
 
   ngOnInit(): void {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
