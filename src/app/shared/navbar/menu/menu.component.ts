@@ -1,6 +1,6 @@
 import { Component, input, output } from '@angular/core';
 import { CommonModule} from '@angular/common';
-import { NgxPageScrollDirective  } from 'ngx-page-scroll';
+import { NgxPageScrollModule } from 'ngx-page-scroll'
 import { TranslateService,TranslateModule} from '@ngx-translate/core';
 
 
@@ -12,7 +12,7 @@ const timing = '150ms ease-in-out';
 @Component({
   selector: 'app-menu',
   standalone: true,
-  imports: [CommonModule, TranslateModule],
+  imports: [CommonModule, TranslateModule, NgxPageScrollModule],
   templateUrl: './menu.component.html',
   styleUrl: './menu.component.scss',
   animations: []
@@ -28,7 +28,9 @@ export class MenuComponent {
   }
 
   updateMenu(menuOpen: boolean) {
-    this.onMenuChange.emit(menuOpen);
+    setTimeout(() => {
+      this.onMenuChange.emit(menuOpen);
+    }, 1800);
   }
 
 }
