@@ -2,4 +2,7 @@
   height: 400px;
   display: flex;
   justify-content: flex-end;
+  > img {
+    width: 100%;
+  }
 }
