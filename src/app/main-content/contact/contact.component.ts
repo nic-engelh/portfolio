@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { FormCacheServiceService } from '../../service/form-cache/form-cache-service.service';
 import { HttpClient } from '@angular/common/http';
 import { TranslateService,TranslateModule} from '@ngx-translate/core';
+import { NgxPageScrollDirective  } from 'ngx-page-scroll';
 
 @Component({
   selector: 'app-contact',
