@@ -45,6 +45,12 @@ section {
   justify-content: center;
 }
 
+.arrow-box {
+  height: 400px;
+  display: flex;
+  justify-content: flex-end;
+}
+
 .skill-box {
   overflow:hidden;
 }
@@ -85,4 +91,6 @@ section {
   }
 
 }
+
+
 

@@ -1,14 +1,12 @@
 <section id="section-portfolio">
   <div class="arrow-box">
-    <img src="" alt="" />
+    <app-arrow class="arrow-top"></app-arrow>
   </div>
   <div class="section-header-box">
     <h1>Portfolio</h1>
-    <span class="text-box"
-      >
-      {{ 'PORTFOLIO-DESCRIPTION' | translate }}
-      </span
-    >
+    <span class="text-box">
+      {{ "PORTFOLIO-DESCRIPTION" | translate }}
+    </span>
   </div>
 
   <div class="portfolio-box">
@@ -27,20 +25,24 @@
           alt="Project {{ project.name }} Picture"
         />
         <div class="hover-border">
-          <img class="project-img-border-arrow" src="/assets/img/arrow-projects.svg" alt="Moving Arrow">
+          <img
+            class="project-img-border-arrow"
+            src="/assets/img/arrow-projects.svg"
+            alt="Moving Arrow"
+          />
         </div>
       </div>
       <div class="project-description-container">
         <div class="project-number-box">
-          <span class="project-number">0{{ index + 1 }}/0{{ projects.length }} </span>
+          <span class="project-number"
+            >0{{ index + 1 }}/0{{ projects.length }}
+          </span>
         </div>
         <app-project
           [projectName]="project.name"
           [@slideAnimation]="getAnimationState(index)"
         ></app-project>
       </div>
-
-
     </div>
 
     }

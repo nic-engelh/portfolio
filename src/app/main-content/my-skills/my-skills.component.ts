@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { TranslateService,TranslateModule} from '@ngx-translate/core';
+import { ArrowComponent } from '../../shared/components/arrow/arrow.component';
 
 @Component({
   selector: 'app-my-skills',
   standalone: true,
-  imports: [TranslateModule],
+  imports: [TranslateModule, ArrowComponent],
   templateUrl: './my-skills.component.html',
   styleUrl: './my-skills.component.scss'
 })
