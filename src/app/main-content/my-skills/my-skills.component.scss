@@ -1,9 +1,14 @@
+@import '../../../styles/_breakpoints.scss';
+
 .skill-list {
   width: 60%;
   height: fit-content;
   border: 4px solid black;
   position: relative;
   padding: 128px;
+  @include sm {
+    padding: 64px;
+  }
 
   > span {
     position: absolute;
@@ -15,6 +20,11 @@
     background-color: white;
     transform: translateX(-50%);
     min-width: 512px;
+    @include sm {
+      font-size: 64px;
+      text-align: center;
+      min-width: max-content;
+    }
   }
   > span:hover {
     color: #FF9900;

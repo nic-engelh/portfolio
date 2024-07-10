@@ -1,16 +1,11 @@
+@import '../../../styles/_breakpoints.scss';
 $directions: row, row-reverse, row;
-
-section {
-  height: max-content;
-}
 
 .arrow-box {
   height: 440px;
   transform: scaleX(-1);
   width: 100%;
 }
-
-
 
 .section-header-box {
   display: flex;
@@ -27,8 +22,16 @@ section {
   align-items: center;
   gap: 128px;
   margin-top: 128px;
+  @include sm {
+    flex-direction: column !important;
+    justify-content: space-evenly;
+    gap: 248px;
+  }
 
   > div {
+    @include sm {
+      flex-direction: column !important;
+    }
     @for $i from 1 through length($directions) {
       &:nth-child(#{$i}) {
         display: flex;
@@ -63,6 +66,7 @@ section {
   width: 90%;
   height: 480px;
   max-width: 1239px;
+  display: flex;
   align-items: center;
   gap: 64px;
 
@@ -89,7 +93,6 @@ section {
     }
 
   }
-
 
 }
 
@@ -159,11 +162,8 @@ h1:hover {
   font-size: 48px;
 }
 
-@media screen and (max-width: 700px) {
-  .project-box {
-    flex-direction: column;
-  }
 
+@media screen and (max-width: 700px) {
   .project-img {
     width: 316px;
     height: 200px;
@@ -172,7 +172,7 @@ h1:hover {
 
 @media screen and (max-width: 1200px) {
   .project-box {
-    gap: 32px;
+    gap: 72px;
   }
 
   .project-img {

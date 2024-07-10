@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { ArrowComponent } from '../../shared/components/arrow/arrow.component';
 import { TranslateService,TranslateModule} from '@ngx-translate/core';
+import { NgxPageScrollModule } from 'ngx-page-scroll'
 
 @Component({
   selector: 'app-about-me',
   standalone: true,
-  imports: [ArrowComponent, TranslateModule],
+  imports: [ArrowComponent, TranslateModule, NgxPageScrollModule],
   templateUrl: './about-me.component.html',
   styleUrl: './about-me.component.scss',
 })

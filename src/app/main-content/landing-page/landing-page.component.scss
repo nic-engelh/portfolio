@@ -1,6 +1,4 @@
-
-@import '../../../styles/_breakpoints.scss';
-
+@import "../../../styles/_breakpoints.scss";
 
 header {
   display: flex;
@@ -17,32 +15,47 @@ h1 {
   text-align: center;
   margin-bottom: 80px;
 
+  @include lg {
+    font-size: 88px;
+    margin-bottom: 60px;
+  }
+
   @include md {
     font-size: 88px;
     margin-bottom: 60px;
   }
- @include sm {
+
+  @include sm {
+    font-size: 64px;
+    margin-bottom: 32px;
+  }
+
+  @include xs {
     font-size: 48px;
     margin-bottom: 32px;
- }
- @include xs {
-  font-size: 48px;
-  margin-bottom: 32px;
- }
+  }
 }
 
 .line {
   border-bottom: 4px solid black;
   width: 650px;
+
+  @include lg {
+    width: 460px;
+  }
+
   @include md {
     width: 460px;
   }
 
-
+  @include sm {
+    width: 230px;
+  }
 }
+
 .title-subname {
-  font-family: 'overpass';
-  color: #FF9900;
+  font-family: "overpass";
+  color: #ff9900;
   font-weight: 600;
   font-size: 32px;
   margin-left: 8px;
@@ -66,7 +79,7 @@ p {
 }
 
 #bottom {
-  font-family: 'Syne';
+  font-family: "Syne";
   font-size: 20px;
   font-weight: 100;
 
@@ -81,6 +94,7 @@ p {
   display: flex;
   flex-direction: column;
   align-items: center;
+
   > span {
     text-align: center;
   }
@@ -94,18 +108,13 @@ section {
   width: 116px;
   height: 180px;
   padding: 10px;
-  Gap: 10px;
+  gap: 10px;
 }
 
 .email-box {
   display: flex;
   align-items: stretch;
 }
-
-
-
-
-
 
 .my-component {
   font-size: 16px;
@@ -130,7 +139,3 @@ section {
     font-size: 20px;
   }
 }
-
-
-
-
