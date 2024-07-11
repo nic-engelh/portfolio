@@ -1,3 +1,5 @@
+@import "../../../styles/_breakpoints.scss";
+
 nav {
     font-family: 'Syne';
     background-color: white;
@@ -15,6 +17,13 @@ nav {
     justify-content: space-between;
     align-items: center;
     padding: 30px 100px 30px 100px;
+    hyphens: auto;
+    @include sm {
+      padding: 30px 50px 30px 50px;
+    }
+    @include xs {
+      padding: 0px 25px 0px 25px;
+    }
 
     > div {
         height: 32px;
@@ -29,6 +38,9 @@ nav {
 span {
   font-size: 42px;
   font-weight: 800;
+  @include sm {
+    font-size: 24px;
+  }
 }
 
 .language-switcher {
@@ -40,9 +52,15 @@ span {
     color: black;
     > span {
         font-size: 24px;
+        @include sm {
+          font-size: 16px;
+        }
     }
     > span:hover {
       color: #ff9900;
+    }
+    @include sm {
+      font-size: 16px;
     }
 }
 

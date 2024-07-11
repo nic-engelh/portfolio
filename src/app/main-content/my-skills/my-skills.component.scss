@@ -9,6 +9,12 @@
   @include sm {
     padding: 64px;
   }
+  @include xs {
+    padding: 8px;
+    padding-top: 48px;
+    width: 85%;
+  }
+
 
   > span {
     position: absolute;
@@ -24,6 +30,9 @@
       font-size: 64px;
       text-align: center;
       min-width: max-content;
+    }
+    @include xs {
+      font-size: 40px;
     }
   }
   > span:hover {
