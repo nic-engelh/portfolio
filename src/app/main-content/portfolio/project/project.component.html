@@ -1,15 +1,14 @@
 <section>
-  @for (project of projects; track project) {
-    @if (projectName == project.name) {
-      <div>
+  @for (project of projects; track project; let index = $index) {
+    @if (projectName === project.name) {
+      <div class="project-details" [class.reverse]="index % 2 !== 0">
         <span class="project-title">{{ project.name }}</span>
         <span class="project-stack"> {{ project.stack }}</span>
         <span class="project-info"> {{ project.info | translate }} </span>
-        <div>
+        <div [class.row-reverse]="index % 2 !== 0">
           <div class="link-button">{{ 'PORTFOLIO-TRY' | translate }}</div>
           <div class="link-button">Github</div>
         </div>
-
       </div>
     }
   }

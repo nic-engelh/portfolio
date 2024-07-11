@@ -39,6 +39,7 @@ $directions: row, row-reverse, row;
         flex-direction: nth($directions, $i);
 
         @if nth($directions, $i) == "row-reverse" {
+
           .project-img-border-arrow {
             left: unset;
             right: 6.4%;
