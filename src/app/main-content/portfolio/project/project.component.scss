@@ -1,7 +1,6 @@
-@import '../../../../styles/_breakpoints.scss';
+@import "../../../../styles/_breakpoints.scss";
 
 section {
-
   > div {
     display: flex;
     flex-direction: column;
@@ -16,7 +15,6 @@ section {
       gap: 32px;
     }
   }
-
 }
 
 .reverse {
@@ -32,24 +30,23 @@ section {
 }
 
 .project-title {
-  font-family: 'Syne';
+  font-family: "Syne";
   font-size: 45px;
   font-weight: 800;
 }
 
 .project-stack {
-  font-family: 'overpass';
+  font-family: "overpass";
   font-weight: 400;
   font-size: 23px;
   color: #ff9900;
 }
 
 .project-info {
-  font-family: 'overpass';
+  font-family: "overpass";
   font-weight: 400;
   font-size: 16px;
 }
-
 
 .link-button {
   width: 152px;
@@ -80,14 +77,12 @@ section {
   transition: all 0.3s;
 }
 
-
-
 @media screen and (max-width: 700px) {
- section {
-  >div {
-    max-width: 340px;
-    max-height: 279px;
-    gap: 30px;
+  section {
+    > div {
+      max-width: 340px;
+      max-height: 279px;
+      gap: 30px;
+    }
   }
- }
 }
