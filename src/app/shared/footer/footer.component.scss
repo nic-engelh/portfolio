@@ -1,3 +1,5 @@
+@import '../../../styles/_breakpoints.scss';
+
 footer {
   height: 69px;
   width: 100%;
@@ -13,12 +15,24 @@ footer {
     flex-direction: column;
     gap: 32px;
   }
+
+  @include xs {
+    height: 160px;
+    flex-direction: column;
+    padding-top: unset;
+    align-items: center;
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
 }
 
 .copyright {
   font-weight: 400;
   font-size: 23px;
   font-family: "overpass";
+  @include xs {
+    display: none;
+  }
 }
 
 .legal-notice {
@@ -28,6 +42,10 @@ footer {
   text-decoration: unset;
   color: white;
   text-align: right;
+
+  @include xs {
+    text-align: center;
+  }
 }
 
 .legal-notice-border {
