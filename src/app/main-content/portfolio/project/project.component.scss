@@ -33,6 +33,10 @@ section {
   font-family: "Syne";
   font-size: 45px;
   font-weight: 800;
+  @include xs {
+    font-size: 32px;
+  }
+
 }
 
 .project-stack {

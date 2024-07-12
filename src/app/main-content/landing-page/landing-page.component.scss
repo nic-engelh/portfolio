@@ -129,6 +129,13 @@ section {
 .email-box {
   display: flex;
   align-items: stretch;
+  @include xs {
+    max-width: 250px;
+  }
+
+  @include sm {
+    max-width: 190px;
+  }
 }
 
 .my-component {

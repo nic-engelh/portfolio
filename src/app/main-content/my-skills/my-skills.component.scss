@@ -12,6 +12,7 @@
   @include xs {
     padding: 8px;
     padding-top: 48px;
+    padding-bottom: 48px;
     width: 85%;
   }
 
@@ -45,6 +46,9 @@
     align-content: center;
     align-items: center;
     gap: 96px;
+    @include xs {
+      gap: 42px;
+    }
     > div {
       display: flex;
       flex-direction: column;

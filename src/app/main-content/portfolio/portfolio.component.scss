@@ -25,7 +25,7 @@ $directions: row, row-reverse, row;
   @include sm {
     flex-direction: column !important;
     justify-content: space-evenly;
-    gap: 248px;
+    gap: 196px;
   }
 
   > div {

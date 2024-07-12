@@ -145,6 +145,7 @@ span {
 .portrait-box {
   display: flex;
   justify-content: center;
+  align-items: center;
   @include xs {
     min-width: 320px;
     width: 50%;
