@@ -31,7 +31,7 @@ h1 {
   }
 
   @include xs {
-    font-size: 42px;
+    font-size: 38px;
     margin-bottom: 16px;
   }
 }
@@ -52,7 +52,7 @@ h1 {
     width: 230px;
   }
   @include xs {
-    width: 170px;
+    width: 150px;
   }
 }
 
@@ -69,11 +69,13 @@ h1 {
 
 #top {
   height: 300px;
-
   > div {
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+  @include xs {
+    max-width: 320px !important;
   }
 }
 
@@ -88,12 +90,19 @@ p {
   font-family: "Syne";
   font-size: 20px;
   font-weight: 100;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 
-  > div {
-    display: flex;
-    justify-content: space-between;
-    height: fit-content;
+  @include sm {
+    justify-content: center;
+    max-width: 320px !important;
   }
+  @include xs {
+    justify-content: center;
+    max-width: 300px !important;
+  }
+
 }
 
 .arrow-box {

@@ -80,9 +80,18 @@ section {
 @media screen and (max-width: 700px) {
   section {
     > div {
-      max-width: 340px;
+      max-width: 390px;
       max-height: 279px;
-      gap: 30px;
+      gap: 40px;
+    }
+  }
+}
+@media screen and (max-width: 400px) {
+  section {
+    > div {
+      max-width: 300px;
+      max-height: 279px;
+      gap: 40px;
     }
   }
 }

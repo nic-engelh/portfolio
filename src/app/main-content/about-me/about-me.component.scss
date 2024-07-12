@@ -115,6 +115,9 @@ span {
   @include sm {
     transform:scale(0.75)
   }
+  @include xs {
+    transform:scale(0.5)
+  }
 }
 
 .image-container img {
@@ -140,7 +143,12 @@ span {
 }
 
 .portrait-box {
-  width: fit-content;
+  display: flex;
+  justify-content: center;
+  @include xs {
+    min-width: 320px;
+    width: 50%;
+  }
 }
 
 
