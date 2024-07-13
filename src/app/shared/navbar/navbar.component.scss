@@ -41,6 +41,9 @@ span {
   @include sm {
     font-size: 24px;
   }
+  &:hover {
+    color: #ff9900;
+  }
 }
 
 .language-switcher {
@@ -64,6 +67,10 @@ span {
     }
 }
 
+a {
+  text-decoration: unset;
+  color: unset;
+}
 
 
 
