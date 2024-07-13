@@ -10,6 +10,7 @@ import {
   transition,
 } from '@angular/animations';
 import { TranslateService } from '@ngx-translate/core';
+import { RouterOutlet, RouterLink } from '@angular/router';
 
 
 const hidden = {transform: 'translateY(100%)'};
@@ -19,7 +20,7 @@ const timing = '150ms ease-in-out';
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [MenuComponent, CommonModule, OverlayModule, PortalModule],
+  imports: [MenuComponent, CommonModule, OverlayModule, PortalModule, RouterOutlet, RouterLink],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.scss',
   animations: [
