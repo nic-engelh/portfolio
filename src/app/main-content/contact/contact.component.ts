@@ -21,7 +21,7 @@ export class ContactComponent {
   contactForm: FormGroup;
 
   post = {
-    endPoint: 'https://anfragen@niklasengelharddt.de/sendMail.php',
+    endPoint: 'https://www.niklas-engelharddt.de/sendMail.php',
     body: (payload: any) => JSON.stringify(payload),
     options: {
       headers: {
