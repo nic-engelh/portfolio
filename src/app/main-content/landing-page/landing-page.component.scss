@@ -95,12 +95,12 @@ p {
   width: 100%;
 
   @include sm {
-    justify-content: center;
-    max-width: 320px !important;
+    justify-content: space-between;
+    max-width: 720px !important;
   }
   @include xs {
-    justify-content: center;
-    max-width: 300px !important;
+    justify-content: space-between;
+    min-width: 300px !important;
   }
 
 }

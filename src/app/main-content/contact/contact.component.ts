@@ -5,11 +5,12 @@ import { FormCacheServiceService } from '../../service/form-cache/form-cache-ser
 import { HttpClient } from '@angular/common/http';
 import { TranslateService,TranslateModule} from '@ngx-translate/core';
 import { NgxPageScrollDirective  } from 'ngx-page-scroll';
+import { ArrowComponent } from '../../shared/components/arrow/arrow.component';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [ReactiveFormsModule, FormsModule, CommonModule, TranslateModule],
+  imports: [ReactiveFormsModule, FormsModule, CommonModule, TranslateModule, ArrowComponent],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss'
 })
@@ -20,7 +21,7 @@ export class ContactComponent {
   contactForm: FormGroup;
 
   post = {
-    endPoint: 'https://deineDomain.de/sendMail.php',
+    endPoint: 'https://anfragen@niklasengelharddt.de/sendMail.php',
     body: (payload: any) => JSON.stringify(payload),
     options: {
       headers: {
