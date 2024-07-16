@@ -6,8 +6,12 @@
         <span class="project-stack"> {{ project.stack }}</span>
         <span class="project-info"> {{ project.info | translate }} </span>
         <div [class.row-reverse]="index % 2 !== 0">
-          <div class="link-button">{{ 'PORTFOLIO-TRY' | translate }}</div>
-          <div class="link-button">Github</div>
+          <a href="{{ project.href }}" target="_blank" rel="noopener noreferrer">
+            <div  class="link-button">{{ 'PORTFOLIO-TRY' | translate }}</div>
+          </a>
+          <a href="{{ project.github }}" target="_blank" rel="noopener noreferrer">
+            <div class="link-button">Github</div>
+          </a>
         </div>
       </div>
     }

@@ -17,6 +17,11 @@ section {
   }
 }
 
+a {
+  text-decoration: unset;
+  color: unset;
+}
+
 .reverse {
   @include sm {
     align-items: flex-end !important;
