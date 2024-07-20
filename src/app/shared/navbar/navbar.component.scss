@@ -10,7 +10,8 @@ nav {
     height: fit-content;
     z-index: 1000;
     background: #FFFCF3;
-
+    display: flex;
+    justify-content: center;
 }
 
 .nav-bar {
@@ -18,6 +19,8 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    max-width: 1440px;
+    width: 100%;
     padding: 30px 100px 30px 100px;
     hyphens: auto;
     @include sm {

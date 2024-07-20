@@ -5,38 +5,57 @@ footer {
   width: 100%;
   background-color: black;
   color: white;
-  display: flex;
-  justify-content: space-around;
   padding-top: 48px;
   padding-bottom: 48px;
-
-  > div {
-    display: flex;
-    flex-direction: column;
-    gap: 32px;
-    > a {
-      color:unset;
-      text-decoration: unset;
-      &:hover {
-        color:#ff9900;
-      }
-    }
-  }
+  display: flex;
+  justify-content: center;
 
   @include xs {
     height: 160px;
-    flex-direction: column;
-    padding-top: unset;
-    align-items: center;
-    padding-top: 16px;
-    padding-bottom: 16px;
-}
+  }
+
+  >section {
+    display: flex;
+    width: 100%;
+    max-width: 1440px;
+    justify-content: space-between;
+    padding-left: 100px;
+    padding-right: 100px;
+
+    @include xs {
+      flex-direction: column;
+      padding-top: unset;
+      align-items: center;
+      padding-top: 16px;
+      padding-bottom: 16px;
+    }
+
+    @include sm {
+      padding: 0px 50px 0px 50px;
+    }
+
+    >div {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+
+      >a {
+        color: unset;
+        text-decoration: unset;
+
+        &:hover {
+          color: #ff9900;
+        }
+      }
+    }
+  }
 }
 
 .copyright {
   font-weight: 400;
   font-size: 23px;
   font-family: "overpass";
+
   @include xs {
     display: none;
   }
@@ -90,8 +109,10 @@ footer {
   0% {
     transform: translateY(0);
   }
+
   100% {
-    transform: translateY(-10px); /* Bewegung um 100px nach oben */
+    transform: translateY(-10px);
+    /* Bewegung um 100px nach oben */
   }
 }
 
@@ -99,7 +120,7 @@ footer {
   0% {
     width: 0%;
     opacity: 0;
-    left:100px;
+    left: 100px;
   }
 
   50% {
@@ -111,6 +132,6 @@ footer {
   100% {
     opacity: 1;
     width: 30%;
-    left:143px;
+    left: 143px;
   }
 }

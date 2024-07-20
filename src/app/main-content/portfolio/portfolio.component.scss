@@ -1,10 +1,19 @@
 @import '../../../styles/_breakpoints.scss';
 $directions: row, row-reverse, row;
 
+section {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1440px;
+}
+
 .arrow-box {
   height: 440px;
   transform: scaleX(-1);
   width: 100%;
+  max-width: 1440px;
 }
 
 .section-header-box {

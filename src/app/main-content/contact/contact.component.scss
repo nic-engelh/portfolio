@@ -1,5 +1,13 @@
 @import '../../../styles/_breakpoints.scss';
 
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 1440px;
+  width: 100%;
+}
+
 .rectangle {
   height: 300px;
   width: 100%;
@@ -9,6 +17,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  padding-top: 32px;
   @include xs {
     height: 180px;
   }
@@ -70,6 +79,9 @@
   }
 }
 
+.arrow-box {
+  z-index: 1;
+}
 
 form {
   display: flex;
@@ -80,6 +92,9 @@ form {
   @include xs {
     width: 76%;
     margin-top: 48px;
+  }
+  > button {
+    z-index: 10;
   }
 }
 
