@@ -1,8 +1,9 @@
 @import "../../../../styles/_breakpoints.scss";
 
 .nav-menu {
-    height: 869px;
+    height: 90svh;
     width: 100svw;
+    max-width: 1440px;
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -10,7 +11,7 @@
     background: #FFFCF3;
     font-family: 'Syne';
     @include xs {
-      height: 100%;
+      height: 90svh;
     }
 }
 
