@@ -5,13 +5,13 @@
     width: 100svw;
     max-width: 1440px;
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-start;
     align-items: center;
     flex-direction: column;
     background: #FFFCF3;
     font-family: 'Syne';
     @include xs {
-      height: 100svh;
+      height: 92svh;
     }
 }
 
@@ -19,6 +19,12 @@
     display: none;
 }
 
+.filler-box {
+  background-color: black;
+  height: 100%;
+  width: 100%;
+  flex-grow: 1;
+}
 
 .nav-menu-contacts-container {
     height: 30%;
