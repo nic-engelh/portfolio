@@ -1,15 +1,15 @@
 <div class="nav-menu">
     <div class="menu-link-container">
       <div >
-        <a pageScroll [routerLink]="['/']" href="#section-about-me" (click)="updateMenu(false)">{{ 'MENU-ABOUT' | translate }}</a>
+        <a pageScroll [routerLink]="['/']" [pageScrollDuration]="150"  [pageScrollOffset]="100" href="#section-about-me" (click)="updateMenu(false)">{{ 'MENU-ABOUT' | translate }}</a>
         <div class="link-rectangle"></div>
       </div>
       <div>
-        <a pageScroll [routerLink]="['/']" href="#section-my-skills" (click)="updateMenu(false)">{{ 'MENU-SKILLS' | translate }}</a>
+        <a pageScroll [routerLink]="['/']" [pageScrollDuration]="150"  [pageScrollOffset]="350" href="#section-my-skills" (click)="updateMenu(false)">{{ 'MENU-SKILLS' | translate }}</a>
         <div class="link-rectangle"></div>
       </div>
       <div>
-        <a pageScroll [routerLink]="['/']" href="#section-portfolio" (click)="updateMenu(false)">{{ 'MENU-PORTFOLIO' | translate }}</a>
+        <a pageScroll [routerLink]="['/']" [pageScrollDuration]="150"  [pageScrollOffset]="500" href="#section-portfolio" (click)="updateMenu(false)">{{ 'MENU-PORTFOLIO' | translate }}</a>
         <div class="link-rectangle"></div>
       </div>
     </div>
@@ -18,7 +18,7 @@
         <span>
           {{ 'MENU-HI' | translate }}
         </span>
-        <a pageScroll [routerLink]="['/']" href="#section-contact" (click)="updateMenu(false)">{{ 'Anfragen@NiklasEngelhardt.de' }}</a>
+        <a pageScroll [routerLink]="['/']" [pageScrollDuration]="150" [pageScrollOffset]="250" href="#section-contact" (click)="updateMenu(false)">{{ 'Anfragen@NiklasEngelhardt.de' }}</a>
       </div>
       <div class="link-box">
         <a class="move-button" target="_blank" rel="noopener noreferrer" href="https://github.com/nic-engelh"><img src="../../../../assets/img/Github button s3.svg" alt="Github Link"></a>

@@ -1,15 +1,15 @@
-<section id="section-portfolio">
-  <div class="arrow-box">
+<section>
+  <div class="arrow-box" >
     <app-arrow class="arrow-top"></app-arrow>
   </div>
-  <div class="section-header-box">
+  <div  class="section-header-box">
     <h1>Portfolio</h1>
     <span class="text-box">
       {{ "PORTFOLIO-DESCRIPTION" | translate }}
     </span>
   </div>
 
-  <div class="portfolio-box">
+  <div class="portfolio-box" id="section-portfolio">
     @for (project of projects; track project; let index = $index) {
 
     <div

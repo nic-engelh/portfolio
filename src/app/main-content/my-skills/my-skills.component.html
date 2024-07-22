@@ -1,9 +1,8 @@
-<section id="section-my-skills">
+<section>
 <app-arrow class="arrow-box" ></app-arrow>
-
   <div class="skill-list">
     <span>{{ 'SKILLS-TITLE' | translate}}</span>
-    <div>
+    <div id="section-my-skills">
       @for (skill of skillList; track skill) {
         <div class="skill-box">
           <img src="{{ skill.imagePath }}" alt="{{ skill.name }}" />

@@ -15,7 +15,7 @@
         {{ 'ABOUT-CONTACT' | translate }}
       </span>
       <div class="button-box">
-        <div pageScroll href="#section-contact"class="link-button">
+        <div pageScroll [routerLink]="['/']" [pageScrollOffset]="250" [pageScrollDuration]="500"  href="#section-contact"class="link-button">
           <p>{{ 'ABOUT-BUTTON' | translate }}</p>
         </div>
       </div>

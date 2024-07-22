@@ -1,11 +1,11 @@
-<section id="section-contact">
-  <app-arrow [arrowDirection]="'left'"></app-arrow>
-  <div class="rectangle">
-    <div>
+<section>
+  <app-arrow [arrowDirection]="'left'" ></app-arrow>
+  <div class="rectangle" >
+    <div id="section-contact">
       <span>{{ "SAY" | translate }}</span>
     </div>
   </div>
-  <div class="contact-formular-container">
+  <div class="contact-formular-container" >
     <div class="form-header-box">
       <span class="form-header">{{ "CONTACT-HEADER" | translate }}</span>
       <span class="form-subheader">{{ "CONTACT-DISCUSS" | translate }}</span>
@@ -91,7 +91,7 @@
       </button>
     </form>
     <div class="arrow-box">
-      <a pageScroll href="#section-landing-page">
+      <a pageScroll [pageScrollDuration]="500" href="#section-landing-page">
         <svg class="arrow" width="54" height="77" viewBox="0 0 54 77" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M44.8525 38.125 L26.9263 23.9988L9.00011 38.125" stroke="#FFFCF3" stroke-width="4"/>
           <path class="arrow-body" d="M26.9263 76.043 L26.9263 23.999" stroke="#FFFCF3" stroke-width="4"/>

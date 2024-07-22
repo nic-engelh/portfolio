@@ -42,7 +42,7 @@ export class MenuComponent {
     }
     setTimeout(() => {
       this.onMenuChange.emit(menuOpen);
-    }, 1800);
+    }, 150);
   }
 
   goToHomeRoute() {

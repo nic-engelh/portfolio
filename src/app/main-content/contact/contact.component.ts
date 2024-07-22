@@ -4,13 +4,13 @@ import { CommonModule } from '@angular/common';
 import { FormCacheServiceService } from '../../service/form-cache/form-cache-service.service';
 import { HttpClient } from '@angular/common/http';
 import { TranslateService,TranslateModule} from '@ngx-translate/core';
-import { NgxPageScrollDirective  } from 'ngx-page-scroll';
 import { ArrowComponent } from '../../shared/components/arrow/arrow.component';
+import { NgxPageScrollModule } from 'ngx-page-scroll';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [ReactiveFormsModule, FormsModule, CommonModule, TranslateModule, ArrowComponent],
+  imports: [ReactiveFormsModule, FormsModule, CommonModule, TranslateModule, ArrowComponent, NgxPageScrollModule],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss'
 })
