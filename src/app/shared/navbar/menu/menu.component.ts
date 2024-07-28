@@ -48,6 +48,7 @@ export class MenuComponent {
 
     }
     setTimeout(() => {
+      this.scrollToTarget(target);
       this.onMenuChange.emit(menuOpen);
     }, 150);
   }
