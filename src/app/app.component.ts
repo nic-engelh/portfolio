@@ -6,6 +6,7 @@ import { FooterComponent } from './shared/footer/footer.component';
 import { NgxPageScrollModule } from 'ngx-page-scroll';
 import { NgxPageScrollCoreModule } from 'ngx-page-scroll-core';
 import { ImprintComponent } from './imprint/imprint.component';
+import { PageScrollService } from 'ngx-page-scroll-core';
 
 
 @Component({

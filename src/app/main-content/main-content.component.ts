@@ -7,6 +7,8 @@ import { ContactComponent } from './contact/contact.component';
 import { MySkillsComponent } from './my-skills/my-skills.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
 import { RouterOutlet, RouterLink } from '@angular/router';
+import { PageScrollService } from 'ngx-page-scroll-core';
+import { NgxPageScrollModule } from 'ngx-page-scroll'
 
 @Component({
   selector: 'app-main-content',

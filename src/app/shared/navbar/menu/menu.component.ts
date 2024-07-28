@@ -1,9 +1,11 @@
 import { Component, Inject, output, OnInit } from '@angular/core';
-import { CommonModule} from '@angular/common';
-import { DOCUMENT } from '@angular/common';
+import { CommonModule, DOCUMENT } from '@angular/common';
 import { NgxPageScrollModule } from 'ngx-page-scroll'
+import { PageScrollService } from 'ngx-page-scroll-core';
+
+
 import { TranslateService,TranslateModule} from '@ngx-translate/core';
-import { Router } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 
 
 const hidden = {transform: 'translateY(100%)'};
@@ -13,7 +15,7 @@ const timing = '150ms ease-in-out';
 @Component({
   selector: 'app-menu',
   standalone: true,
-  imports: [CommonModule, TranslateModule, NgxPageScrollModule],
+  imports: [CommonModule, TranslateModule, NgxPageScrollModule, RouterModule],
   templateUrl: './menu.component.html',
   styleUrl: './menu.component.scss',
   animations: []
@@ -25,7 +27,7 @@ export class MenuComponent {
   public href: string = "";
   onMenuChange = output<boolean>();
 
-  constructor (public translate: TranslateService, private router: Router) {
+  constructor (public translate: TranslateService, private router: Router,private pageScrollService: PageScrollService, @Inject(DOCUMENT) private document: any ) {
     this.translate.setDefaultLang('en');
   }
 
@@ -34,11 +36,16 @@ export class MenuComponent {
     //Add 'implements OnInit' to the class.
     this.href = this.router.url;
     this.checkRoute();
+    console.log(this.isImprintActive)
   }
 
-  async updateMenu(menuOpen: boolean) {
+  async updateMenu(menuOpen: boolean, target: string) {
     if (this.isImprintActive) {
-     this.goToHomeRoute();
+     await this.goToHomeRoute();
+     setTimeout(() => {
+      this.scrollToTarget(target);
+    }, 150);
+
     }
     setTimeout(() => {
       this.onMenuChange.emit(menuOpen);
@@ -54,4 +61,12 @@ export class MenuComponent {
       this.isImprintActive = true;
     }
   }
-}
+
+  scrollToTarget (target: string) {
+    this.pageScrollService.scroll({
+      document: this.document,
+      scrollTarget: target,
+    });
+   }
+
+  }
