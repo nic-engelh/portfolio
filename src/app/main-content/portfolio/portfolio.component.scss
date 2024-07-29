@@ -38,6 +38,10 @@ section {
     gap: 80px;
   }
 
+@include xs {
+    gap: 116px;
+  }
+
   > div {
     @include sm {
       flex-direction: column !important;
