@@ -90,5 +90,4 @@ export class NavbarComponent {
       }
     }, 125);
   }
-
 }
