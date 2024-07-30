@@ -173,18 +173,22 @@ h1:hover {
   }
 }
 
-.project-box:hover .hover-border {
-  opacity: 1;
-  transform: translateX(20px) translateY(20px);
+@media (hover: hover) {
+  .project-box:hover .hover-border {
+    opacity: 1;
+    transform: translateX(20px) translateY(20px);
+  }
+
+  .project-box:hover .project-img {
+    filter: unset;
+  }
+
+  .project-box:hover .project-img-border-arrow {
+    transform: rotate(-120deg);
+  }
 }
 
-.project-box:hover .project-img {
-  filter: unset;
-}
 
-.project-box:hover .project-img-border-arrow {
-  transform: rotate(-120deg);
-}
 
 .project-img-border-arrow {
   width: 75.7px;

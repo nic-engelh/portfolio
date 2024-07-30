@@ -63,7 +63,7 @@ export class PortfolioComponent {
     //Add 'implements OnInit' to the class.
     this.isMobile = this.deviceService.isMobile();
     this.isTablet = this.deviceService.isTablet();
-    
+
     this.breakpointObserver
       .observe(['(max-width: 700px)'])
       .pipe(takeUntil(this.destroy$))
@@ -77,6 +77,8 @@ export class PortfolioComponent {
     //Add 'implements OnDestroy' to the class.
     this.destroy$.next();
     this.destroy$.complete();
+    this.isMobile = false;
+    this.isTablet = false;
   }
 
   onHover(hoveredProject: number) {
