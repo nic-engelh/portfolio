@@ -220,9 +220,7 @@ flex-grow: 1;
   }
 }
 
-
-
-  @media screen and (max-height: 925px) {
+  @media screen and (max-height: 925px) and (min-width: 554px) {
 
     .menu-link-container  {
       > div {

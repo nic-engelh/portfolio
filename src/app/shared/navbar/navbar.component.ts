@@ -12,7 +12,6 @@ import {
 import { TranslateService } from '@ngx-translate/core';
 import { RouterOutlet, RouterLink } from '@angular/router';
 
-
 const hidden = {transform: 'translateY(100%)'};
 const visible = {transform: 'translateY(0)'};
 const timing = '150ms ease-in-out';
@@ -58,6 +57,8 @@ export class NavbarComponent {
 
 
   constructor(private overlay: Overlay, private translate: TranslateService) {
+
+
   }
 
   switchLanguage(language: string): void {

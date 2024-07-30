@@ -6,6 +6,7 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { TranslateService,TranslateModule} from '@ngx-translate/core';
+import { DeviceDetectorService } from 'ngx-device-detector';
 
 @Component({
   selector: 'app-portfolio',
@@ -41,8 +42,10 @@ import { TranslateService,TranslateModule} from '@ngx-translate/core';
   ]
 })
 export class PortfolioComponent {
-  isHovered = false;
-  isSmallScreen = false;
+  isHovered: boolean = false;
+  isSmallScreen: boolean = false;
+  isMobile: boolean = false;
+  isTablet: boolean = false;
   private destroy$ = new Subject<void>();
 
   projects: {name: string, imagePath: string, isHovered: boolean}[] = [
@@ -51,13 +54,16 @@ export class PortfolioComponent {
     {name: "Sharky", imagePath: "/assets/img/portfolio/portfolio-sharky-hover.svg", isHovered: false},
   ]
 
-  constructor (private breakpointObserver: BreakpointObserver, public translate: TranslateService) {
+  constructor (private breakpointObserver: BreakpointObserver, public translate: TranslateService, private deviceService: DeviceDetectorService) {
     this.translate.setDefaultLang('en');
   }
 
   ngOnInit(): void {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
     //Add 'implements OnInit' to the class.
+    this.isMobile = this.deviceService.isMobile();
+    this.isTablet = this.deviceService.isTablet();
+    
     this.breakpointObserver
       .observe(['(max-width: 700px)'])
       .pipe(takeUntil(this.destroy$))
@@ -79,6 +85,10 @@ export class PortfolioComponent {
 
   onLeave(hoveredProject: number) {
     this.projects[hoveredProject].isHovered = false;
+  }
+
+  onMobile(hoveredProject: number) {
+    this.projects[hoveredProject].isHovered = true;
   }
 
   getAnimationState(projectIndex: number): string {

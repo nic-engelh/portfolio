@@ -160,6 +160,19 @@ h1:hover {
   transition: opacity 0.3s, transform 0.3s;
 }
 
+@media (hover: none) {
+  .hover-border {
+    opacity: 1;
+    transform: translateX(20px) translateY(20px);
+  }
+  .project-img {
+    filter: unset;
+  }
+  .project-img-border-arrow {
+    transform: rotate(-120deg);
+  }
+}
+
 .project-box:hover .hover-border {
   opacity: 1;
   transform: translateX(20px) translateY(20px);
@@ -224,3 +237,4 @@ h1:hover {
     width: 100%;
   }
 }
+

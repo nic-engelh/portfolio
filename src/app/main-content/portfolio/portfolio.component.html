@@ -38,10 +38,17 @@
             >0{{ index + 1 }}/0{{ projects.length }}
           </span>
         </div>
-        <app-project
+        @if (isMobile || isTablet ) {
+          <app-project
+          [projectName]="project.name"
+          [@slideAnimation]="'visible-small'"
+        ></app-project>
+        } @else {
+          <app-project
           [projectName]="project.name"
           [@slideAnimation]="getAnimationState(index)"
         ></app-project>
+        }
       </div>
     </div>
 
