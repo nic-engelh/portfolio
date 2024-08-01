@@ -7,6 +7,7 @@ import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { TranslateService,TranslateModule} from '@ngx-translate/core';
 import { DeviceDetectorService } from 'ngx-device-detector';
+import { interval, Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-portfolio',
@@ -47,6 +48,7 @@ export class PortfolioComponent {
   isMobile: boolean = false;
   isTablet: boolean = false;
   private destroy$ = new Subject<void>();
+  private detectionSubscription: Subscription | undefined;
 
   projects: {name: string, imagePath: string, isHovered: boolean}[] = [
     {name: "Pokedex", imagePath: "/assets/img/portfolio/portfolio-pokedex-hover.svg", isHovered: false},
@@ -61,8 +63,22 @@ export class PortfolioComponent {
   ngOnInit(): void {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
     //Add 'implements OnInit' to the class.
+
     this.isMobile = this.deviceService.isMobile();
     this.isTablet = this.deviceService.isTablet();
+
+    this.detectionSubscription = interval(5000).subscribe(() => {
+      this.isMobile = this.deviceService.isMobile();
+      this.isTablet = this.deviceService.isTablet();
+    });
+      const deviceInfo = this.deviceService.getDeviceInfo();
+      const isMobile = this.deviceService.isMobile();
+      const isTablet = this.deviceService.isTablet();
+      const isDesktopDevice = this.deviceService.isDesktop();
+      console.log(deviceInfo);
+      console.log(isMobile);  // returns if the device is a mobile device (android / iPhone / windows-phone etc)
+      console.log(isTablet);  // returns if the device us a tablet (iPad etc)
+      console.log(isDesktopDevice);
 
     this.breakpointObserver
       .observe(['(max-width: 700px)'])
